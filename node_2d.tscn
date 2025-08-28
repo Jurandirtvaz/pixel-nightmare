@@ -1,0 +1,45 @@
+[gd_scene load_steps=6 format=3 uid="uid://djruxkw64drdj"]
+
+[ext_resource type="Script" uid="uid://b0bx4flg4iakd" path="res://player.gd" id="1_wtcfe"]
+[ext_resource type="Texture2D" uid="uid://7cvl8gx3dvfr" path="res://icon.svg" id="2_0e48y"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_epypp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_0e48y")
+}],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0e48y"]
+size = Vector2(47, 48)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_epypp"]
+size = Vector2(1410, 505)
+
+[node name="Node2D" type="Node2D"]
+position = Vector2(884, 648)
+
+[node name="Player" type="CharacterBody2D" parent="."]
+position = Vector2(-606, -265)
+script = ExtResource("1_wtcfe")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player"]
+position = Vector2(17.5, -14)
+scale = Vector2(0.367188, 0.375)
+sprite_frames = SubResource("SpriteFrames_epypp")
+animation = &"new_animation"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+position = Vector2(17.5, -14)
+shape = SubResource("RectangleShape2D_0e48y")
+
+[node name="Chão" type="StaticBody2D" parent="."]
+position = Vector2(3, -90)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Chão"]
+position = Vector2(-4, 89.5)
+shape = SubResource("RectangleShape2D_epypp")
