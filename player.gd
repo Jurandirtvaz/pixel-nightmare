@@ -3,8 +3,9 @@ extends CharacterBody2D
 @export var speed: float = 300.0
 @export var acceleration: float = 1500.0 
 @export var friction: float = 1500.0
-@export var max_hp: int = 3 #Vida máxima
-var hp: int = max_hp #Vida atual
+@export var vidas_maximas: int = 3 #Vida máxima
+var vidas: int = vidas_maximas #Vida atual
+var hud : Node
 
 func _physics_process(delta: float) -> void:
 	var input_vector := Vector2.ZERO
@@ -21,18 +22,31 @@ func _physics_process(delta: float) -> void:
 
 	move_and_slide()
 	
-func tomar_dano(amount: int) -> void:
-	hp -= amount
-	if hp < 0 :
-		hp = 0
-	print("HP atual:", hp)
-	if hp == 0:
+func tomar_dano() -> void:
+	if vidas <= 0:
+		return
+	vidas -= 1
+	#Atualizar os quadradinhos de vida
+	if hud:
+		hud.atualizar_vidas(vidas)
+		hud.piscar_vida(vidas)
+	print("Vidas do player:", vidas)
+	
+	if vidas == 0:
+		await get_tree().create_timer(0.12).timeout
 		morrer()
 
 func morrer() -> void:
 	velocity = Vector2.ZERO
 	print("GAME OVER")
-	#Ainda vou implementar:         (NETO)
-	#Adicionar uma troca de cena
-	#Fazer uma animacao de morte
-	#Mostrar um hud de game over
+	await get_tree().create_timer(0.3).timeout
+	get_tree().change_scene_to_file("res://Cenas/game_over.tscn")
+	
+#funcao para testar o dano e o hud das vidas
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("ui_accept"):
+		tomar_dano()
+		
+func _ready() -> void:
+	hud = get_tree().get_first_node_in_group("hud")
+	print("HUD encontrado? ", hud != null)
