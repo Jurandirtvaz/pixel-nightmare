@@ -1,0 +1,34 @@
+[gd_scene load_steps=2 format=3 uid="uid://cb1ohuye5gdqu"]
+
+[ext_resource type="Script" uid="uid://2mtbuhxutvhm" path="res://hud.gd" id="1_37p78"]
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_37p78")
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Vidas" type="HBoxContainer" parent="UI"]
+layout_mode = 1
+offset_left = 32.0
+offset_top = 32.0
+offset_right = 52.0
+offset_bottom = 36.0
+theme_override_constants/separation = 4
+
+[node name="Vida1" type="ColorRect" parent="UI/Vidas"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+
+[node name="Vida2" type="ColorRect" parent="UI/Vidas"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+
+[node name="Vida3" type="ColorRect" parent="UI/Vidas"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
