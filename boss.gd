@@ -1,23 +1,27 @@
-# Boss.gd
 extends CharacterBody2D
 
 @export var speed: float = 100
 @export var wait_time: float = 1.0
 @export var attack_damage: int = 20
+@export var max_hp: int = 200
 
+# HP
+var hp: int
+
+# Movimento
 var player: CharacterBody2D = null
 var target_position: Vector2
 var moving: bool = false
 var state_timer: Timer
 
 func _ready():
-	# Timer
+	hp = max_hp
+
 	state_timer = Timer.new()
 	state_timer.one_shot = true
 	state_timer.timeout.connect(Callable(self, "_on_state_timer_timeout"))
 	add_child(state_timer)
 
-	# Pega player pelo grupo
 	var players = get_tree().get_nodes_in_group("player")
 	if players.size() > 0:
 		player = players[0]
@@ -31,7 +35,6 @@ func _physics_process(delta):
 		velocity = dir * speed
 		move_and_slide()
 
-		# Chegou no player? Ataca
 		if global_position.distance_to(target_position) < 10:
 			velocity = Vector2.ZERO
 			moving = false
@@ -54,13 +57,27 @@ func _on_node_added(node):
 		get_tree().disconnect("node_added", Callable(self, "_on_node_added"))
 
 # ======================
-#      ATAQUE
+# ATAQUE
 # ======================
-
 func attack():
-	# Instancia a onda de impacto
 	var wave_scene = preload("res://Shockwave.tscn")
 	var wave = wave_scene.instantiate()
 	wave.global_position = global_position
-	wave.attack_damage = attack_damage  # caso queira passar dano para a onda
+	wave.attack_damage = attack_damage
 	get_parent().add_child(wave)
+
+# ======================
+# DANO / HP
+# ======================
+func take_damage(amount):
+	hp -= amount
+	if hp < 0:
+		hp = 0
+	_update_hp_bar()
+
+func _update_hp_bar():
+	if get_tree().has_current_scene():
+		var bar = get_tree().current_scene.get_node("CanvasLayer/BossHPBar") # ajuste conforme sua barra
+		if bar:
+			bar.max_value = max_hp
+			bar.value = hp
