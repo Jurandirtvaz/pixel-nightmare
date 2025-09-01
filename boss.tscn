@@ -1,7 +1,8 @@
-[gd_scene load_steps=14 format=3 uid="uid://dxss2p330l6nf"]
+[gd_scene load_steps=15 format=3 uid="uid://dxss2p330l6nf"]
 
 [ext_resource type="Script" uid="uid://dro4td8kciudk" path="res://boss.gd" id="1_s4p10"]
 [ext_resource type="Texture2D" uid="uid://bf81ct0qrt6l4" path="res://sprites/Mão 2.png" id="2_catpj"]
+[ext_resource type="PackedScene" uid="uid://dkncw2u2kbc1l" path="res://shockwave.tscn" id="3_skx2t"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_skx2t"]
 size = Vector2(104, 96)
@@ -83,25 +84,27 @@ animations = [{
 }]
 
 [node name="BOSS" type="CharacterBody2D"]
-position = Vector2(667, 316)
+position = Vector2(671, 297)
 script = ExtResource("1_s4p10")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1, -1)
+position = Vector2(0, -1)
 shape = SubResource("RectangleShape2D_skx2t")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 
 [node name="ShootPoint" type="Node2D" parent="."]
-position = Vector2(-1, -1)
+position = Vector2(-14, -18)
 
 [node name="Marker2D" type="Marker2D" parent="ShootPoint"]
-position = Vector2(2, 1)
+position = Vector2(-2, 0)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, 1.00003)
+position = Vector2(0, 1)
 scale = Vector2(0.325513, 0.293255)
 sprite_frames = SubResource("SpriteFrames_1s1j2")
 animation = &"Idle"
+
+[node name="Shockwave" parent="." instance=ExtResource("3_skx2t")]

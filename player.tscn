@@ -1,13 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://djruxkw64drdj"]
+[gd_scene load_steps=5 format=3 uid="uid://cya625nmwshxl"]
 
-[ext_resource type="Script" uid="uid://b0bx4flg4iakd" path="res://player.gd" id="1_wtcfe"]
-[ext_resource type="Texture2D" uid="uid://cdhw5brwyock2" path="res://sprites/Player.png" id="2_0e48y"]
+[ext_resource type="Script" uid="uid://b0bx4flg4iakd" path="res://player.gd" id="1_onrkg"]
+[ext_resource type="Texture2D" uid="uid://cdhw5brwyock2" path="res://sprites/Player.png" id="2_i3pqv"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_epypp"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_0e48y")
+"texture": ExtResource("2_i3pqv")
 }],
 "loop": true,
 "name": &"new_animation",
@@ -20,7 +20,7 @@ size = Vector2(25, 40)
 [node name="Player" type="CharacterBody2D"]
 position = Vector2(155, 163)
 rotation = -0.192888
-script = ExtResource("1_wtcfe")
+script = ExtResource("1_onrkg")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(1, -5.72205e-06)

@@ -1,68 +1,66 @@
+# Boss.gd
 extends CharacterBody2D
 
-# Configurações do boss
 @export var speed: float = 100
-@export var max_hp: int = 200
-@export var smash_cooldown: float = 3.0
-@export var shoot_cooldown: float = 2.0
+@export var wait_time: float = 1.0
+@export var attack_damage: int = 20
 
-var hp: int
-var phase2: bool = false
 var player: CharacterBody2D = null
-var smash_timer: Timer
-var shoot_timer: Timer
+var target_position: Vector2
+var moving: bool = false
+var state_timer: Timer
 
 func _ready():
-	hp = max_hp
-	# procura o player na cena (ajusta o caminho conforme teu jogo)
-	player = get_tree().get_root().get_node("Node2D/Player")
+	# Timer
+	state_timer = Timer.new()
+	state_timer.one_shot = true
+	state_timer.timeout.connect(Callable(self, "_on_state_timer_timeout"))
+	add_child(state_timer)
 
-	# Timer para smash
-	smash_timer = Timer.new()
-	smash_timer.wait_time = smash_cooldown
-	smash_timer.autostart = true
-	smash_timer.timeout.connect(_on_smash_timeout)
-	add_child(smash_timer)
-
-	# Timer para tiros (só começa na fase 2)
-	shoot_timer = Timer.new()
-	shoot_timer.wait_time = shoot_cooldown
-	shoot_timer.autostart = false
-	shoot_timer.timeout.connect(_on_shoot_timeout)
-	add_child(shoot_timer)
+	# Pega player pelo grupo
+	var players = get_tree().get_nodes_in_group("player")
+	if players.size() > 0:
+		player = players[0]
+		_go_to_player()
+	else:
+		get_tree().connect("node_added", Callable(self, "_on_node_added"))
 
 func _physics_process(delta):
-	if player:
-		# movimento sempre em direção ao player
-		var direction = (player.global_position - global_position).normalized()
-		velocity = direction * speed
+	if moving and player:
+		var dir = (target_position - global_position).normalized()
+		velocity = dir * speed
 		move_and_slide()
 
-func _on_smash_timeout():
-	smash()
+		# Chegou no player? Ataca
+		if global_position.distance_to(target_position) < 10:
+			velocity = Vector2.ZERO
+			moving = false
+			attack()
+			state_timer.start(wait_time)
 
-func smash():
-	$AnimatedSprite2D.play("smash")
-	var wave = preload("res://Shockwave.tscn").instantiate()
+func _on_state_timer_timeout():
+	if player:
+		_go_to_player()
+
+func _go_to_player():
+	if player:
+		target_position = player.global_position
+		moving = true
+
+func _on_node_added(node):
+	if node.is_in_group("player"):
+		player = node
+		_go_to_player()
+		get_tree().disconnect("node_added", Callable(self, "_on_node_added"))
+
+# ======================
+#      ATAQUE
+# ======================
+
+func attack():
+	# Instancia a onda de impacto
+	var wave_scene = preload("res://Shockwave.tscn")
+	var wave = wave_scene.instantiate()
 	wave.global_position = global_position
+	wave.attack_damage = attack_damage  # caso queira passar dano para a onda
 	get_parent().add_child(wave)
-
-func _on_shoot_timeout():
-	shoot()
-
-func shoot():
-	var bullet = preload("res://Bullet.tscn").instantiate()
-	bullet.global_position = $ShootPoint.global_position
-	bullet.direction = (player.global_position - $ShootPoint.global_position).normalized()
-	get_parent().add_child(bullet)
-
-func take_damage(amount):
-	hp -= amount
-	if hp <= max_hp/2 and not phase2:
-		phase2 = true
-		shoot_timer.start()
-	if hp <= 0:
-		die()
-
-func die():
-	queue_free()
