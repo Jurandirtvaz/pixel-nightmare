@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://c0sr0o0u4ogax"]
+[gd_scene load_steps=4 format=3 uid="uid://c0sr0o0u4ogax"]
 
 [ext_resource type="Script" uid="uid://d1l6w4t3faesn" path="res://bullet.gd" id="1_v7oki"]
+[ext_resource type="Texture2D" uid="uid://vvm0o34f0ehw" path="res://sprites/raio.png" id="2_v8qja"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v7oki"]
 
@@ -8,6 +9,7 @@
 script = ExtResource("1_v7oki")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_v8qja")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_v7oki")

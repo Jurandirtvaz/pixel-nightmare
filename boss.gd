@@ -5,10 +5,9 @@ extends CharacterBody2D
 @export var attack_damage: int = 20
 @export var max_hp: int = 200
 
-# HP
 var hp: int
+var phase2: bool = false
 
-# Movimento
 var player: CharacterBody2D = null
 var target_position: Vector2
 var moving: bool = false
@@ -16,10 +15,9 @@ var state_timer: Timer
 
 func _ready():
 	hp = max_hp
-
 	state_timer = Timer.new()
 	state_timer.one_shot = true
-	state_timer.timeout.connect(Callable(self, "_on_state_timer_timeout"))
+	state_timer.timeout.connect(_on_state_timer_timeout)
 	add_child(state_timer)
 
 	var players = get_tree().get_nodes_in_group("player")
@@ -57,27 +55,39 @@ func _on_node_added(node):
 		get_tree().disconnect("node_added", Callable(self, "_on_node_added"))
 
 # ======================
-# ATAQUE
+# ATAQUES
 # ======================
 func attack():
+	# Ataque normal (onda de impacto)
 	var wave_scene = preload("res://Shockwave.tscn")
 	var wave = wave_scene.instantiate()
 	wave.global_position = global_position
 	wave.attack_damage = attack_damage
 	get_parent().add_child(wave)
 
+	# Se estiver na fase 2, atira também
+	if phase2:
+		attack_laser()
+
+func attack_laser():
+	if not has_node("ShootPoint") or not player:
+		return
+
+	var laser_scene = preload("res://bullet.tscn")
+	var laser = laser_scene.instantiate()
+	laser.global_position = $ShootPoint.global_position
+	laser.direction = (player.global_position - $ShootPoint.global_position).normalized()
+	get_parent().add_child(laser)
+
 # ======================
-# DANO / HP
+# DANO
 # ======================
 func take_damage(amount):
 	hp -= amount
-	if hp < 0:
-		hp = 0
-	_update_hp_bar()
+	if hp <= max_hp / 2 and not phase2:
+		phase2 = true  # ativa fase 2
+	if hp <= 0:
+		die()
 
-func _update_hp_bar():
-	if get_tree().has_current_scene():
-		var bar = get_tree().current_scene.get_node("CanvasLayer/BossHPBar") # ajuste conforme sua barra
-		if bar:
-			bar.max_value = max_hp
-			bar.value = hp
+func die():
+	queue_free()
