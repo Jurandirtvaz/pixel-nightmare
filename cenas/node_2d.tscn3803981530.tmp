@@ -1,0 +1,54 @@
+[gd_scene load_steps=9 format=3 uid="uid://djruxkw64drdj"]
+
+[ext_resource type="Script" uid="uid://b0bx4flg4iakd" path="res://cenas/player.gd" id="1_smc2o"]
+[ext_resource type="Texture2D" uid="uid://cdhw5brwyock2" path="res://sprites/Player.png" id="2_1ikvx"]
+[ext_resource type="PackedScene" uid="uid://dxss2p330l6nf" path="res://cenas/boss.tscn" id="3_1ikvx"]
+[ext_resource type="PackedScene" uid="uid://c0sr0o0u4ogax" path="res://cenas/bullet.tscn" id="4_410y7"]
+[ext_resource type="PackedScene" uid="uid://dkncw2u2kbc1l" path="res://cenas/shockwave.tscn" id="5_6snwf"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_epypp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_1ikvx")
+}],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0e48y"]
+size = Vector2(25, 40)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_epypp"]
+size = Vector2(1410, 505)
+
+[node name="Node2D" type="Node2D"]
+position = Vector2(884, 648)
+
+[node name="Player" type="CharacterBody2D" parent="."]
+position = Vector2(-594, -273)
+script = ExtResource("1_smc2o")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player"]
+position = Vector2(1, -5.72205e-06)
+scale = Vector2(0.367188, 0.375)
+sprite_frames = SubResource("SpriteFrames_epypp")
+animation = &"new_animation"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+position = Vector2(1, 0)
+shape = SubResource("RectangleShape2D_0e48y")
+
+[node name="Chão" type="StaticBody2D" parent="."]
+position = Vector2(3, -90)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Chão"]
+position = Vector2(-4, 89.5)
+shape = SubResource("RectangleShape2D_epypp")
+
+[node name="BOSS" parent="." instance=ExtResource("3_1ikvx")]
+
+[node name="Bullet" parent="." instance=ExtResource("4_410y7")]
+
+[node name="Shockwave" parent="." instance=ExtResource("5_6snwf")]

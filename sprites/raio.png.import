@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cdhw5brwyock2"
-path="res://.godot/imported/Player.png-6ad97dc0d7d497fbd410dec4a2441102.ctex"
+uid="uid://vvm0o34f0ehw"
+path="res://.godot/imported/raio.png-f4b61f3235f3e35f3aea8c67ac2117cc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/Player.png"
-dest_files=["res://.godot/imported/Player.png-6ad97dc0d7d497fbd410dec4a2441102.ctex"]
+source_file="res://sprites/raio.png"
+dest_files=["res://.godot/imported/raio.png-f4b61f3235f3e35f3aea8c67ac2117cc.ctex"]
 
 [params]
 
