@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://4dstygftnj3f"
-path="res://.godot/imported/Dano em area.png-7c2b56f2ee8a853f2a4746d17de9069c.ctex"
+uid="uid://bh53lbfefqfp0"
+path="res://.godot/imported/salafrente.jpg-010465d8e97d3ae881fa6a8839fb6144.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Dano em area.png"
-dest_files=["res://.godot/imported/Dano em area.png-7c2b56f2ee8a853f2a4746d17de9069c.ctex"]
+source_file="res://Sprites/Menu/salafrente.jpg"
+dest_files=["res://.godot/imported/salafrente.jpg-010465d8e97d3ae881fa6a8839fb6144.ctex"]
 
 [params]
 
