@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://4dstygftnj3f"
-path="res://.godot/imported/Dano em area.png-7c2b56f2ee8a853f2a4746d17de9069c.ctex"
+uid="uid://btw6jgmapnctu"
+path="res://.godot/imported/salatras.jpg-4bf36ac44a731a34a9573bbf16c1cf06.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Dano em area.png"
-dest_files=["res://.godot/imported/Dano em area.png-7c2b56f2ee8a853f2a4746d17de9069c.ctex"]
+source_file="res://Sprites/Menu/salatras.jpg"
+dest_files=["res://.godot/imported/salatras.jpg-4bf36ac44a731a34a9573bbf16c1cf06.ctex"]
 
 [params]
 

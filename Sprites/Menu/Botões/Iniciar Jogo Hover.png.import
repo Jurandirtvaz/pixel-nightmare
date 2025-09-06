@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://4dstygftnj3f"
-path="res://.godot/imported/Dano em area.png-7c2b56f2ee8a853f2a4746d17de9069c.ctex"
+uid="uid://b605tl5ibg6gg"
+path="res://.godot/imported/Iniciar Jogo Hover.png-b4bf55a46c64991a006678426b289839.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Dano em area.png"
-dest_files=["res://.godot/imported/Dano em area.png-7c2b56f2ee8a853f2a4746d17de9069c.ctex"]
+source_file="res://Sprites/Menu/Botões/Iniciar Jogo Hover.png"
+dest_files=["res://.godot/imported/Iniciar Jogo Hover.png-b4bf55a46c64991a006678426b289839.ctex"]
 
 [params]
 

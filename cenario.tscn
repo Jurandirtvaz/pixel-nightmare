@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://dmn2q7fgq40sd"]
+[gd_scene load_steps=10 format=3 uid="uid://dmn2q7fgq40sd"]
 
-[ext_resource type="Texture2D" uid="uid://berp355qs7ynw" path="res://sprites/estacionamanto.png" id="1_xwuul"]
+[ext_resource type="Texture2D" uid="uid://berp355qs7ynw" path="res://Sprites/estacionamanto.png" id="1_xwuul"]
 [ext_resource type="PackedScene" uid="uid://dxss2p330l6nf" path="res://boss.tscn" id="2_bj8tx"]
-[ext_resource type="PackedScene" uid="uid://cya625nmwshxl" path="res://player.tscn" id="3_xwuul"]
+[ext_resource type="PackedScene" uid="uid://8rnlj3pa11yn" path="res://player.tscn" id="3_xwuul"]
+[ext_resource type="Script" path="res://player.gd" id="4_bj8tx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0nnsg"]
 size = Vector2(1267, 159)
@@ -56,6 +57,7 @@ wait_time = 2.0
 [node name="Player" parent="." groups=["player"] instance=ExtResource("3_xwuul")]
 position = Vector2(107, 573)
 rotation = -0.00530558
+script = ExtResource("4_bj8tx")
 
 [node name="HUD" type="CanvasLayer" parent="."]
 
