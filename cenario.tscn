@@ -1,9 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://dmn2q7fgq40sd"]
+[gd_scene load_steps=9 format=3 uid="uid://dmn2q7fgq40sd"]
 
 [ext_resource type="Texture2D" uid="uid://berp355qs7ynw" path="res://Sprites/estacionamanto.png" id="1_xwuul"]
 [ext_resource type="PackedScene" uid="uid://dxss2p330l6nf" path="res://boss.tscn" id="2_bj8tx"]
 [ext_resource type="PackedScene" uid="uid://8rnlj3pa11yn" path="res://player.tscn" id="3_xwuul"]
-[ext_resource type="Script" path="res://player.gd" id="4_bj8tx"]
+[ext_resource type="PackedScene" uid="uid://cb1ohuye5gdqu" path="res://hud.tscn" id="4_bj8tx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0nnsg"]
 size = Vector2(1267, 159)
@@ -16,14 +16,6 @@ size = Vector2(99.5, 684)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mqnm2"]
 size = Vector2(1268, 98)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xwuul"]
-bg_color = Color(1, 0, 0, 1)
-border_width_left = 3
-border_width_top = 3
-border_width_right = 3
-border_width_bottom = 3
-border_color = Color(0, 0, 0, 1)
 
 [node name="Cenario" type="Node2D"]
 position = Vector2(-35, -14)
@@ -57,23 +49,5 @@ wait_time = 2.0
 [node name="Player" parent="." groups=["player"] instance=ExtResource("3_xwuul")]
 position = Vector2(107, 573)
 rotation = -0.00530558
-script = ExtResource("4_bj8tx")
 
-[node name="HUD" type="CanvasLayer" parent="."]
-
-[node name="BossHPBar" type="ProgressBar" parent="HUD"]
-modulate = Color(1, 0, 0, 1)
-self_modulate = Color(1, 0, 0, 1)
-custom_minimum_size = Vector2(700, 30)
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -100.0
-offset_right = 100.0
-offset_bottom = 30.0
-grow_horizontal = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_styles/fill = SubResource("StyleBoxFlat_xwuul")
-max_value = 200.0
-value = 200.0
+[node name="HUD" parent="Player" groups=["hud"] instance=ExtResource("4_bj8tx")]
