@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://5tdy6a6m5l5v" path="res://Sprites/background_teste.jpg" id="2_0e48y"]
 [ext_resource type="PackedScene" uid="uid://cb1ohuye5gdqu" path="res://hud.tscn" id="3_epypp"]
 
-[node name="Node2D" type="Node2D"]
+[node name="Main" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 light_mask = 2
