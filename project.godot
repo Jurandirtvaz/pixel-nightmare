@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Pixel Nightmare"
-run/main_scene="uid://djruxkw64drdj"
+run/main_scene="uid://cl70xqunhmno5"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 

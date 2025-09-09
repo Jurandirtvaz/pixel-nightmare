@@ -1,0 +1,69 @@
+[gd_scene load_steps=8 format=3 uid="uid://cl70xqunhmno5"]
+
+[ext_resource type="Script" uid="uid://bsycj0w78hq3a" path="res://menu.gd" id="1_ouk20"]
+[ext_resource type="PackedScene" uid="uid://dmn2q7fgq40sd" path="res://cenario.tscn" id="2_4hy44"]
+[ext_resource type="PackedScene" uid="uid://byev0jj5d2b0e" path="res://background_animado.tscn" id="2_mae5d"]
+[ext_resource type="Texture2D" uid="uid://bg2cl44weuymf" path="res://Sprites/Menu/Logo/Logo Placeholder.png" id="4_4hy44"]
+[ext_resource type="Texture2D" uid="uid://fqakk78bvwe" path="res://Sprites/Menu/Botões/Iniciar jogo.png" id="4_ecwwl"]
+[ext_resource type="Script" uid="uid://rqsbhjtffjgi" path="res://logo_container.gd" id="4_ytr4m"]
+[ext_resource type="Texture2D" uid="uid://b605tl5ibg6gg" path="res://Sprites/Menu/Botões/Iniciar Jogo Hover.png" id="5_kk3ma"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ouk20")
+game_scene = ExtResource("2_4hy44")
+
+[node name="background_animado" parent="." instance=ExtResource("2_mae5d")]
+layout_mode = 1
+offset_right = 3736.0
+
+[node name="ColorRect" type="ColorRect" parent="."]
+modulate = Color(1, 1, 1, 0.392157)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Iniciar Jogo" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.391
+anchor_top = 0.5
+anchor_right = 0.61
+anchor_bottom = 0.724
+offset_left = -1.43204
+offset_top = 71.0
+offset_right = -0.720032
+offset_bottom = 179.848
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("4_ecwwl")
+texture_hover = ExtResource("5_kk3ma")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="LogoContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -225.0
+offset_right = 225.0
+offset_bottom = 473.0
+grow_horizontal = 2
+theme_override_constants/margin_top = -50
+script = ExtResource("4_ytr4m")
+
+[node name="Logo" type="TextureRect" parent="LogoContainer"]
+layout_mode = 2
+texture = ExtResource("4_4hy44")
+expand_mode = 1
+stretch_mode = 4
