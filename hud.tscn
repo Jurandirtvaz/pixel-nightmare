@@ -1,6 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://cb1ohuye5gdqu"]
+[gd_scene load_steps=3 format=3 uid="uid://cb1ohuye5gdqu"]
 
-[ext_resource type="Script" path="res://hud.gd" id="1_37p78"]
+[ext_resource type="Script" uid="uid://2mtbuhxutvhm" path="res://hud.gd" id="1_37p78"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_37p78"]
+bg_color = Color(1, 0, 0, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
 
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource("1_37p78")
@@ -32,3 +40,22 @@ layout_mode = 2
 [node name="Vida3" type="ColorRect" parent="UI/Vidas"]
 custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
+
+[node name="BossHPBar" type="ProgressBar" parent="UI"]
+modulate = Color(1, 0, 0, 1)
+self_modulate = Color(1, 0, 0, 1)
+custom_minimum_size = Vector2(700, 30)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -358.0
+offset_top = 15.0
+offset_right = 342.0
+offset_bottom = 45.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_styles/fill = SubResource("StyleBoxFlat_37p78")
+max_value = 200.0
+value = 200.0
