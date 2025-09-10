@@ -6,6 +6,7 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_yccnn"]
 
 [node name="Shockwave" type="Area2D"]
+collision_layer = 16
 script = ExtResource("1_pkgyo")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
