@@ -12,6 +12,6 @@ func _physics_process(delta):
 
 func _on_body_entered(body):
 	if body.is_in_group("player"):
-		if body.has_method("take_damage"):
-			body.take_damage(damage)
-		queue_free()
+		if body.has_method("tomar_dano"):
+			body.tomar_dano()
+	queue_free()

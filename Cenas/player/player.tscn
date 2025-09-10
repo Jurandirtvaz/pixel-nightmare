@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://8rnlj3pa11yn"]
 
-[ext_resource type="Script" uid="uid://bwsmffq1e5ua7" path="res://Cenas/player/player.gd" id="1_onrkg"]
+[ext_resource type="Script" uid="uid://bwsmffq1e5ua7" path="res://cenas/player/player.gd" id="1_onrkg"]
 [ext_resource type="Texture2D" uid="uid://cdhw5brwyock2" path="res://sprites/Player.png" id="2_i3pqv"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_hqtel"]
@@ -17,7 +17,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sweqy"]
 size = Vector2(25, 40)
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" groups=["player"]]
 script = ExtResource("1_onrkg")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
