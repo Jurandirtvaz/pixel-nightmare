@@ -82,7 +82,7 @@ func attack_laser():
 # ======================
 # DANO
 # ======================
-func take_damage(amount):
+func receber_dano(amount):
 	hp -= amount
 	if hp <= max_hp / 2 and not phase2:
 		phase2 = true  # ativa fase 2
