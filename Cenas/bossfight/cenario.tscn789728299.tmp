@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://dmn2q7fgq40sd"]
+
+[ext_resource type="Texture2D" uid="uid://berp355qs7ynw" path="res://Sprites/estacionamanto.png" id="1_xwuul"]
+[ext_resource type="PackedScene" uid="uid://dxss2p330l6nf" path="res://Cenas/boss/boss.tscn" id="2_bj8tx"]
+[ext_resource type="PackedScene" uid="uid://8rnlj3pa11yn" path="res://Cenas/player/player.tscn" id="3_xwuul"]
+[ext_resource type="PackedScene" uid="uid://cb1ohuye5gdqu" path="res://Cenas/hud/hud.tscn" id="4_bj8tx"]
+
+[node name="Cenario" type="Node2D"]
+position = Vector2(-35, -14)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(573, 347)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("1_xwuul")
+
+[node name="BOSS" parent="." instance=ExtResource("2_bj8tx")]
+position = Vector2(648, 335)
+rotation = -0.0171482
+wait_time = 2.0
+
+[node name="Player" parent="." groups=["player"] instance=ExtResource("3_xwuul")]
+position = Vector2(107, 573)
+rotation = -0.00530558
+speed = null
+acceleration = null
+friction = null
+vidas_maximas = null
+dano_ataque = null
+reload = null
+
+[node name="HUD" parent="Player" groups=["hud"] instance=ExtResource("4_bj8tx")]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(34, -12, 34, 698, 1105, 706, 1112, -16)

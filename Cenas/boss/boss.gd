@@ -3,10 +3,11 @@ extends CharacterBody2D
 @export var speed: float = 100
 @export var wait_time: float = 1.0
 @export var attack_damage: int = 20
-@export var max_hp: int = 200
+@export var max_hp: float = 200
 
-var hp: int
-var phase2: bool = false
+var hp: float
+var phase2 = false
+var hud: Node
 
 var player: CharacterBody2D = null
 var target_position: Vector2
@@ -19,7 +20,8 @@ func _ready():
 	state_timer.one_shot = true
 	state_timer.timeout.connect(_on_state_timer_timeout)
 	add_child(state_timer)
-
+	
+	hud = get_tree().get_first_node_in_group("hud")
 	var players = get_tree().get_nodes_in_group("player")
 	if players.size() > 0:
 		player = players[0]
@@ -59,7 +61,7 @@ func _on_node_added(node):
 # ======================
 func attack():
 	# Ataque normal (onda de impacto)
-	var wave_scene = preload("res://Shockwave.tscn")
+	var wave_scene = preload("res://Cenas/boss/ataque/shockwave.tscn")
 	var wave = wave_scene.instantiate()
 	wave.global_position = global_position
 	wave.attack_damage = attack_damage
@@ -73,7 +75,7 @@ func attack_laser():
 	if not has_node("ShootPoint") or not player:
 		return
 
-	var laser_scene = preload("res://bullet.tscn")
+	var laser_scene = preload("res://Cenas/boss/ataque/bullet.tscn")
 	var laser = laser_scene.instantiate()
 	laser.global_position = $ShootPoint.global_position
 	laser.direction = (player.global_position - $ShootPoint.global_position).normalized()
@@ -83,9 +85,13 @@ func attack_laser():
 # DANO
 # ======================
 func receber_dano(amount):
-	hp -= amount
+	hp = clamp(hp - amount, 0, max_hp)
+	
+	if hud:
+		hud.atualizar_vida_boss(hp, max_hp)
+
 	if hp <= max_hp / 2 and not phase2:
-		phase2 = true  # ativa fase 2
+		phase2 = true
 	if hp <= 0:
 		die()
 

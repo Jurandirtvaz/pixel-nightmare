@@ -5,6 +5,8 @@ extends CanvasLayer
 	$"UI/Vidas/Vida3"
 ]
 
+@onready var boss_hp_bar: ProgressBar = $UI/BossHPBar
+
 var vidas_atuais: int = 3
 
 func _ready() -> void:
@@ -30,3 +32,14 @@ func piscar_vida(indice:int) -> void:
 	no.modulate = Color(1, 0.2, 0.2, 1)
 	await get_tree().create_timer(0.08).timeout
 	no.modulate = original
+	
+	
+func atualizar_vida_boss(vida_atual: float, vida_maxima: float) -> void:
+	if not boss_hp_bar.visible:
+		boss_hp_bar.visible = true
+		
+		print("HUD recebeu comando para atualizar. Vida:", vida_atual, "/", vida_maxima)
+	
+	boss_hp_bar.max_value = vida_maxima
+	
+	boss_hp_bar.value = vida_atual

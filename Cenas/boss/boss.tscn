@@ -1,12 +1,12 @@
 [gd_scene load_steps=16 format=3 uid="uid://dxss2p330l6nf"]
 
-[ext_resource type="Script" uid="uid://dro4td8kciudk" path="res://boss.gd" id="1_s4p10"]
-[ext_resource type="Texture2D" uid="uid://bf81ct0qrt6l4" path="res://Sprites/Mão 2.png" id="2_catpj"]
-[ext_resource type="PackedScene" uid="uid://dkncw2u2kbc1l" path="res://shockwave.tscn" id="3_skx2t"]
-[ext_resource type="PackedScene" uid="uid://c0sr0o0u4ogax" path="res://bullet.tscn" id="4_lnbgr"]
+[ext_resource type="Script" uid="uid://dro4td8kciudk" path="res://Cenas/boss/boss.gd" id="1_s4p10"]
+[ext_resource type="Texture2D" uid="uid://bf81ct0qrt6l4" path="res://sprites/Mão 2.png" id="2_catpj"]
+[ext_resource type="PackedScene" uid="uid://dkncw2u2kbc1l" path="res://Cenas/boss/ataque/shockwave.tscn" id="3_skx2t"]
+[ext_resource type="PackedScene" uid="uid://c0sr0o0u4ogax" path="res://Cenas/boss/ataque/bullet.tscn" id="4_lnbgr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_skx2t"]
-size = Vector2(104, 96)
+size = Vector2(70, 67)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lnbgr"]
 atlas = ExtResource("2_catpj")
@@ -89,7 +89,7 @@ position = Vector2(671, 297)
 script = ExtResource("1_s4p10")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -1)
+position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_skx2t")
 
 [node name="ShootPoint" type="Node2D" parent="."]

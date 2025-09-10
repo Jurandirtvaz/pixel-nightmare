@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://fqakk78bvwe"
-path="res://.godot/imported/Iniciar jogo.png-4f58aaa71fc572ae5245e0d31f00f28e.ctex"
+path="res://.godot/imported/Iniciar jogo.png-9a3913c2d27fffffa33b3fada96ecfc9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Menu/Botões/Iniciar jogo.png"
-dest_files=["res://.godot/imported/Iniciar jogo.png-4f58aaa71fc572ae5245e0d31f00f28e.ctex"]
+source_file="res://sprites/menu/Botões/Iniciar jogo.png"
+dest_files=["res://.godot/imported/Iniciar jogo.png-9a3913c2d27fffffa33b3fada96ecfc9.ctex"]
 
 [params]
 

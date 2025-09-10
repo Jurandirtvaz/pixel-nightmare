@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://csh7wdo7afgf7"]
 
-[ext_resource type="Script" uid="uid://c4jh1et86rt40" path="res://tiro_equacional.gd" id="1_on021"]
+[ext_resource type="Script" uid="uid://c4jh1et86rt40" path="res://Cenas/player/ataque/tiro_equacional.gd" id="1_on021"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_talnd"]
 
