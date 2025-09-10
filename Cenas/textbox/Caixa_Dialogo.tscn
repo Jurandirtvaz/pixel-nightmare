@@ -1,0 +1,49 @@
+[gd_scene load_steps=2 format=3 uid="uid://cpa2ntywx1rwi"]
+
+[ext_resource type="Script" uid="uid://bbpqu070vhdpd" path="res://Cenas/textbox/caixa_dialogo.gd" id="1_lsaeu"]
+
+[node name="CaixaDialogo" type="CanvasLayer"]
+script = ExtResource("1_lsaeu")
+
+[node name="TextBox" type="Panel" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -344.0
+offset_top = -177.0
+offset_right = 348.0
+offset_bottom = -21.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="TextBox"]
+offset_right = 693.0
+offset_bottom = 155.0
+bbcode_enabled = true
+text = "Olha como o texto sai bonitinho rapaz só essa fonte que não dá não vo baxar uma melhor"
+horizontal_alignment = 1
+
+[node name="Proximo" type="TextureRect" parent="TextBox"]
+offset_right = 689.0
+offset_bottom = 155.0
+
+[node name="NameBox" type="Panel" parent="."]
+offset_left = 232.0
+offset_top = 426.0
+offset_right = 409.0
+offset_bottom = 466.0
+
+[node name="NameLabel" type="Label" parent="NameBox"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Personagem"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TypewriterTimer" type="Timer" parent="."]

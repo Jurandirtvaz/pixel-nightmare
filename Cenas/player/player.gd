@@ -15,7 +15,7 @@ var hud : Node
 var pode_atirar: bool = true
 var ultima_direcao: Vector2 = Vector2.DOWN
 @onready var ponto_tiro: Node2D = $PontodoTiro
-@onready var projetil = preload("res://tiro_equacional.tscn")
+@onready var projetil = preload("res://Cenas/player/ataque/tiro_equacional.tscn")
 
 @onready var placeholder: ColorRect = $ColorRect
 var esta_morto : bool = false
@@ -64,7 +64,7 @@ func morrer() -> void:
 	await get_tree().create_timer(0.3).timeout
 	
 	#Adicionando o game-over como overlay
-	var overlay = preload("res://Cenas/game_over.tscn").instantiate()
+	var overlay = preload("res://Cenas/gameover/game_over.tscn").instantiate()
 	get_tree().current_scene.add_child(overlay)
 	get_tree().paused = true
 	
