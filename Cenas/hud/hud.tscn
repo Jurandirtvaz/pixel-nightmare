@@ -40,17 +40,20 @@ offset_right = 52.0
 offset_bottom = 36.0
 theme_override_constants/separation = 4
 
-[node name="Vida1" type="ColorRect" parent="UI/Vidas"]
+[node name="Vida1" type="TextureRect" parent="UI/Vidas"]
 custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
+texture = ExtResource("2_2k5c4")
 
-[node name="Vida2" type="ColorRect" parent="UI/Vidas"]
+[node name="Vida2" type="TextureRect" parent="UI/Vidas"]
 custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
+texture = ExtResource("2_2k5c4")
 
-[node name="Vida3" type="ColorRect" parent="UI/Vidas"]
+[node name="Vida3" type="TextureRect" parent="UI/Vidas"]
 custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
+texture = ExtResource("2_2k5c4")
 
 [node name="BossHPBar" type="ProgressBar" parent="UI"]
 modulate = Color(1, 0, 0, 1)
