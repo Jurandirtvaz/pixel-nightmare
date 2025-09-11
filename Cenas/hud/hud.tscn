@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://cb1ohuye5gdqu"]
+[gd_scene load_steps=4 format=3 uid="uid://cb1ohuye5gdqu"]
 
 [ext_resource type="Script" uid="uid://2mtbuhxutvhm" path="res://Cenas/hud/hud.gd" id="1_37p78"]
+[ext_resource type="Texture2D" uid="uid://dpkuf1dr0r566" path="res://sprites/Hud/playercabeca_vida.png" id="2_2k5c4"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_37p78"]
 bg_color = Color(1, 0, 0, 1)
@@ -29,17 +30,20 @@ offset_right = 52.0
 offset_bottom = 36.0
 theme_override_constants/separation = 4
 
-[node name="Vida1" type="ColorRect" parent="UI/Vidas"]
+[node name="Vida1" type="TextureRect" parent="UI/Vidas"]
 custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
+texture = ExtResource("2_2k5c4")
 
-[node name="Vida2" type="ColorRect" parent="UI/Vidas"]
+[node name="Vida2" type="TextureRect" parent="UI/Vidas"]
 custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
+texture = ExtResource("2_2k5c4")
 
-[node name="Vida3" type="ColorRect" parent="UI/Vidas"]
+[node name="Vida3" type="TextureRect" parent="UI/Vidas"]
 custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
+texture = ExtResource("2_2k5c4")
 
 [node name="BossHPBar" type="ProgressBar" parent="UI"]
 modulate = Color(1, 0, 0, 1)
