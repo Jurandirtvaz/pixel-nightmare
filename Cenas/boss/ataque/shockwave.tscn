@@ -4,7 +4,6 @@
 [ext_resource type="Texture2D" uid="uid://4dstygftnj3f" path="res://sprites/Dano em area.png" id="2_yccnn"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_yccnn"]
-radius = 12.0416
 
 [node name="Shockwave" type="Area2D"]
 collision_layer = 16

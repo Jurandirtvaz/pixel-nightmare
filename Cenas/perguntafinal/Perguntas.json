@@ -1,0 +1,17 @@
+[
+	{
+		"pergunta": "O que é rasterização?",
+		"opcoes": ["Aplicar textura 3D", "Converter um vetor em pixels", "Remover polígonos ocultos", "Movimento de translação"],
+		"opcaocorreta": 1
+	},
+	{
+		"pergunta": "taltaltal",
+		"opcoes": ["tal", "tal", "tal", "tal"],
+		"opcaocorreta": 0
+	},
+	{
+		"pergunta": "taltaltal",
+		"opcoes": ["tal", "tal", "tal", "tal"],
+		"opcaocorreta": 0
+	}
+]

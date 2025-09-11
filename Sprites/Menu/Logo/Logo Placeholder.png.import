@@ -10,6 +10,7 @@ metadata={
 
 [deps]
 
+
 source_file="res://sprites/menu/Logo/Logo Placeholder.png"
 dest_files=["res://.godot/imported/Logo Placeholder.png-63d8b2dc1397c5868f9ae87b0ff854c6.ctex"]
 
