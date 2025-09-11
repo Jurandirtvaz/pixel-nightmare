@@ -100,13 +100,14 @@ position = Vector2(-14, -18)
 position = Vector2(-2, 0)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, 1)
+position = Vector2(1, 0)
 scale = Vector2(0.325513, 0.293255)
 sprite_frames = SubResource("SpriteFrames_1s1j2")
 animation = &"Idle"
 
 [node name="Shockwave" parent="." instance=ExtResource("3_skx2t")]
-position = Vector2(0, -1)
+position = Vector2(1, 0)
+scale = Vector2(10, 10)
 
 [node name="Bullet" parent="." instance=ExtResource("4_lnbgr")]
 position = Vector2(-15, -20)

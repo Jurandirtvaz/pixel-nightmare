@@ -2,8 +2,9 @@ extends CharacterBody2D
 
 @export var speed: float = 100
 @export var wait_time: float = 1.0
-@export var attack_damage: int = 20
-@export var max_hp: float = 200
+@export var attack_damage: int = 1
+@export var max_hp: float = 100
+@export var num_shots = 7
 
 var hp: float
 var phase2 = false
@@ -67,7 +68,7 @@ func attack():
 	wave.attack_damage = attack_damage
 	get_parent().add_child(wave)
 
-	# Se estiver na fase 2, atira também
+	# Se estiver na fase 2, atira tambémdddd
 	if phase2:
 		attack_laser()
 
@@ -76,10 +77,28 @@ func attack_laser():
 		return
 
 	var laser_scene = preload("res://Cenas/boss/ataque/bullet.tscn")
-	var laser = laser_scene.instantiate()
-	laser.global_position = $ShootPoint.global_position
-	laser.direction = (player.global_position - $ShootPoint.global_position).normalized()
-	get_parent().add_child(laser)
+	var shoot_point = $ShootPoint.global_position
+
+	var base_dir = (player.global_position - shoot_point).normalized()
+
+
+	var spread = deg_to_rad(90)
+
+	var start_angle = -spread / 2
+	var angle_step = spread / (num_shots - 1)
+
+	for i in range(num_shots):
+		var angle = start_angle + i * angle_step
+		var dir = base_dir.rotated(angle)
+
+		var laser = laser_scene.instantiate()
+		laser.global_position = shoot_point
+		laser.direction = dir
+		get_parent().add_child(laser)
+
+		await get_tree().create_timer(0.20).timeout
+
+
 
 # ======================
 # DANO
