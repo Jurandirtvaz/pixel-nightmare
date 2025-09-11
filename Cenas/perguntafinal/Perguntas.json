@@ -5,13 +5,13 @@
 		"opcaocorreta": 1
 	},
 	{
-		"pergunta": "taltaltal",
-		"opcoes": ["tal", "tal", "tal", "tal"],
-		"opcaocorreta": 0
+		"pergunta": "Qual é a função principal de um Fragment Shader (Pixel Shader)?",
+		"opcoes": ["Definir a posição dos vértices", "Calcular a cor final de um pixel", "Gerar geometria", "Remover faces ocultas"],
+		"opcaocorreta": 2
 	},
 	{
-		"pergunta": "taltaltal",
-		"opcoes": ["tal", "tal", "tal", "tal"],
-		"opcaocorreta": 0
+		"pergunta": "O que a sigla RGB, representa?",
+		"opcoes": ["Red, Gray, Blue", "Red, Gold, Black", "Radio, Game, Bit", "Red, Green, Blue"],
+		"opcaocorreta": 4
 	}
 ]
