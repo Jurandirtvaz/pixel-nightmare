@@ -1,14 +1,25 @@
-[gd_scene load_steps=3 format=3 uid="uid://cb1ohuye5gdqu"]
+[gd_scene load_steps=7 format=3 uid="uid://cb1ohuye5gdqu"]
 
 [ext_resource type="Script" uid="uid://2mtbuhxutvhm" path="res://Cenas/hud/hud.gd" id="1_37p78"]
+[ext_resource type="FontFile" uid="uid://cfdamhje42oi2" path="res://sprites/Assets/KiwiSoda.ttf" id="2_gp3hh"]
+[ext_resource type="Texture2D" uid="uid://8mnr000r7ao3" path="res://sprites/hudboss/hpbarorigin.png" id="3_0aydj"]
+[ext_resource type="Texture2D" uid="uid://0ql3w6mceoi" path="res://sprites/hudboss/fillboss.png" id="4_gr1d7"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_37p78"]
-bg_color = Color(1, 0, 0, 1)
-border_width_left = 3
-border_width_top = 3
-border_width_right = 3
-border_width_bottom = 3
-border_color = Color(0, 0, 0, 1)
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8mg5d"]
+texture = ExtResource("3_0aydj")
+texture_margin_top = 2.0
+texture_margin_bottom = 1.0
+expand_margin_top = 25.0
+expand_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_j6ecw"]
+texture = ExtResource("4_gr1d7")
+texture_margin_top = 4.0
+texture_margin_bottom = 2.0
+expand_margin_left = 1.0
+expand_margin_top = 25.0
+expand_margin_right = 2.0
+expand_margin_bottom = 9.0
 
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource("1_37p78")
@@ -49,13 +60,35 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -358.0
-offset_top = 15.0
-offset_right = 342.0
-offset_bottom = 45.0
+offset_left = -350.0
+offset_top = 1.0
+offset_right = 350.0
+offset_bottom = 31.0
 grow_horizontal = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_styles/fill = SubResource("StyleBoxFlat_37p78")
+theme_override_fonts/font = ExtResource("2_gp3hh")
+theme_override_font_sizes/font_size = 17
+theme_override_styles/background = SubResource("StyleBoxTexture_8mg5d")
+theme_override_styles/fill = SubResource("StyleBoxTexture_j6ecw")
 max_value = 200.0
-value = 200.0
+value = 199.0
+show_percentage = false
+
+[node name="BossNameLabel" type="Label" parent="UI"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.118
+anchor_right = 0.5
+anchor_bottom = 0.118
+offset_left = -120.0
+offset_top = -39.464
+offset_right = 123.0
+offset_bottom = 8.536
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_gp3hh")
+theme_override_font_sizes/font_size = 48
+text = "Icaro's Hand"

@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dvj2h60kbijt2"]
 
 [ext_resource type="Script" uid="uid://c6rqa3rocwtpm" path="res://Cenas/perguntafinal/quiz.gd" id="1_y7dva"]
-[ext_resource type="FontFile" uid="uid://cfdamhje42oi2" path="res://Sprites/Assets/KiwiSoda.ttf" id="2_5lhto"]
+[ext_resource type="FontFile" uid="uid://cfdamhje42oi2" path="res://sprites/Assets/KiwiSoda.ttf" id="2_5lhto"]
 
 [node name="Quiz" type="Control"]
 layout_mode = 3
