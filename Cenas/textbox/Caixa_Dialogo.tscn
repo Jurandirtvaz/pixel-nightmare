@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://cpa2ntywx1rwi"]
+[gd_scene load_steps=3 format=3 uid="uid://cpa2ntywx1rwi"]
 
 [ext_resource type="Script" uid="uid://bbpqu070vhdpd" path="res://Cenas/textbox/caixa_dialogo.gd" id="1_lsaeu"]
+[ext_resource type="FontFile" uid="uid://cfdamhje42oi2" path="res://sprites/Assets/KiwiSoda.ttf" id="2_6mppf"]
 
 [node name="CaixaDialogo" type="CanvasLayer"]
 script = ExtResource("1_lsaeu")
@@ -22,9 +23,11 @@ grow_vertical = 0
 layout_mode = 0
 offset_right = 693.0
 offset_bottom = 155.0
+theme_override_fonts/normal_font = ExtResource("2_6mppf")
 bbcode_enabled = true
 text = "Olha como o texto sai bonitinho rapaz só essa fonte que não dá não vo baxar uma melhor"
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Proximo" type="TextureRect" parent="TextBox"]
 layout_mode = 0
@@ -44,6 +47,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_6mppf")
 text = "Personagem"
 horizontal_alignment = 1
 vertical_alignment = 1
