@@ -7,7 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://cb1ohuye5gdqu" path="res://Cenas/hud/hud.tscn" id="4_bj8tx"]
 [ext_resource type="Script" uid="uid://cqwatfa84v0mi" path="res://Cenas/bossfight/npc_teste_box.gd" id="5_6l3mj"]
 [ext_resource type="Texture2D" uid="uid://vvm0o34f0ehw" path="res://Sprites/raio.png" id="7_fuqey"]
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lbtql"]
 size = Vector2(1081.5, 106)
 

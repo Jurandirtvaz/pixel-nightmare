@@ -1,5 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://dkncw2u2kbc1l"]
 
+
 [ext_resource type="Script" uid="uid://dkspdl58j1cie" path="res://Cenas/boss/ataque/shockwave.gd" id="1_pkgyo"]
 [ext_resource type="Texture2D" uid="uid://4dstygftnj3f" path="res://Sprites/Dano em area.png" id="2_yccnn"]
 
@@ -10,6 +11,8 @@ collision_layer = 16
 script = ExtResource("1_pkgyo")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -2.84217e-14)
+scale = Vector2(0.041748, 0.0437012)
 texture = ExtResource("2_yccnn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

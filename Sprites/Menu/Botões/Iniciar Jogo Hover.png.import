@@ -10,6 +10,7 @@ metadata={
 
 [deps]
 
+
 source_file="res://Sprites/Menu/Botões/Iniciar Jogo Hover.png"
 dest_files=["res://.godot/imported/Iniciar Jogo Hover.png-b4bf55a46c64991a006678426b289839.ctex"]
 

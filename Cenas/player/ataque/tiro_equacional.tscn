@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://csh7wdo7afgf7"]
+
+[ext_resource type="Script" uid="uid://c4jh1et86rt40" path="res://cenas/player/ataque/tiro_equacional.gd" id="1_on021"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_talnd"]
+
+[node name="TiroEquacional" type="Area2D"]
+collision_layer = 8
+collision_mask = 2
+script = ExtResource("1_on021")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(12, 12)
+shape = SubResource("RectangleShape2D_talnd")
+
+[node name="TxtEquacao" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+text = "Teste(Vai ser trocado pelas equacoes)"
+horizontal_alignment = 1
+vertical_alignment = 1

@@ -1,0 +1,49 @@
+[gd_scene load_steps=4 format=3 uid="uid://bslv0fo17gaql"]
+
+[ext_resource type="Script" uid="uid://cs0cgu4t4huj5" path="res://Cenas/gameover/game_over.gd" id="1_7y2ld"]
+[ext_resource type="Shader" uid="uid://bap1qf46y4ber" path="res://Cenas/gameover/game_over.gdshader" id="1_18dpl"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_y26ei"]
+shader = ExtResource("1_18dpl")
+shader_parameter/intensidade = 1.0
+shader_parameter/raio = 0.0
+shader_parameter/cor_sangue = Vector3(0.6, 0, 0)
+
+[node name="GameOver" type="CanvasLayer"]
+script = ExtResource("1_7y2ld")
+
+[node name="Bordas" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_y26ei")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Titulo" type="Label" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 64
+text = "GAME OVER"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Dica" type="Label" parent="Titulo"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -2.0
+offset_top = 50.0
+offset_right = -2.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 32
+text = "Pressione Enter para reiniciar"
+horizontal_alignment = 1
+vertical_alignment = 1
