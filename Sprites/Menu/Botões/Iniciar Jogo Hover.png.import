@@ -3,16 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b605tl5ibg6gg"
-path="res://.godot/imported/Iniciar Jogo Hover.png-b4bf55a46c64991a006678426b289839.ctex"
+path="res://.godot/imported/Iniciar Jogo Hover.png-108d308296258a5a43c014e70a081395.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-
-source_file="res://Sprites/Menu/Botões/Iniciar Jogo Hover.png"
-dest_files=["res://.godot/imported/Iniciar Jogo Hover.png-b4bf55a46c64991a006678426b289839.ctex"]
+source_file="res://sprites/menu/Botões/Iniciar Jogo Hover.png"
+dest_files=["res://.godot/imported/Iniciar Jogo Hover.png-108d308296258a5a43c014e70a081395.ctex"]
 
 [params]
 

@@ -19,6 +19,7 @@ grow_horizontal = 2
 grow_vertical = 0
 
 [node name="RichTextLabel" type="RichTextLabel" parent="TextBox"]
+layout_mode = 0
 offset_right = 693.0
 offset_bottom = 155.0
 bbcode_enabled = true
@@ -26,6 +27,7 @@ text = "Olha como o texto sai bonitinho rapaz só essa fonte que não dá não v
 horizontal_alignment = 1
 
 [node name="Proximo" type="TextureRect" parent="TextBox"]
+layout_mode = 0
 offset_right = 689.0
 offset_bottom = 155.0
 

@@ -2,7 +2,7 @@
 
 
 [ext_resource type="Script" uid="uid://dro4td8kciudk" path="res://Cenas/boss/boss.gd" id="1_s4p10"]
-[ext_resource type="Texture2D" uid="uid://bf81ct0qrt6l4" path="res://Sprites/Mão 2.png" id="2_catpj"]
+[ext_resource type="Texture2D" uid="uid://bf81ct0qrt6l4" path="res://sprites/Mão 2.png" id="2_catpj"]
 [ext_resource type="PackedScene" uid="uid://dkncw2u2kbc1l" path="res://Cenas/boss/ataque/shockwave.tscn" id="3_skx2t"]
 [ext_resource type="PackedScene" uid="uid://c0sr0o0u4ogax" path="res://Cenas/boss/ataque/bullet.tscn" id="4_lnbgr"]
 

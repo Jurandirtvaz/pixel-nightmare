@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cyxolkq5xs142"
-path="res://.godot/imported/salaesquerda.jpg-75fd1e2a327f6e11aa3e7dbfdee06fb9.ctex"
+uid="uid://dsjgyhu3jvg2"
+path="res://.godot/imported/Player Movement Up-Sheet.png-0c1833ad14589e89df46f9e77dbcee4a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/menu/salaesquerda.jpg"
-dest_files=["res://.godot/imported/salaesquerda.jpg-75fd1e2a327f6e11aa3e7dbfdee06fb9.ctex"]
+source_file="res://sprites/player/idle/Player Movement Up-Sheet.png"
+dest_files=["res://.godot/imported/Player Movement Up-Sheet.png-0c1833ad14589e89df46f9e77dbcee4a.ctex"]
 
 [params]
 

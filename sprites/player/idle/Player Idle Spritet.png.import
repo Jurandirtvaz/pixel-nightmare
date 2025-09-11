@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cyxolkq5xs142"
-path="res://.godot/imported/salaesquerda.jpg-75fd1e2a327f6e11aa3e7dbfdee06fb9.ctex"
+uid="uid://w6hgvsiu62lr"
+path="res://.godot/imported/Player Idle Spritet.png-14d47ffd77b5c3ea8143804d7a04b3bd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/menu/salaesquerda.jpg"
-dest_files=["res://.godot/imported/salaesquerda.jpg-75fd1e2a327f6e11aa3e7dbfdee06fb9.ctex"]
+source_file="res://sprites/player/idle/Player Idle Spritet.png"
+dest_files=["res://.godot/imported/Player Idle Spritet.png-14d47ffd77b5c3ea8143804d7a04b3bd.ctex"]
 
 [params]
 

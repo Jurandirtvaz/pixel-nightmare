@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cyxolkq5xs142"
-path="res://.godot/imported/salaesquerda.jpg-75fd1e2a327f6e11aa3e7dbfdee06fb9.ctex"
+uid="uid://bxob5vycj0ak4"
+path="res://.godot/imported/NPC Generico.png-c6958c0d2a733963cfaed5b30cb88a82.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/menu/salaesquerda.jpg"
-dest_files=["res://.godot/imported/salaesquerda.jpg-75fd1e2a327f6e11aa3e7dbfdee06fb9.ctex"]
+source_file="res://sprites/saladeaula/NPC Generico.png"
+dest_files=["res://.godot/imported/NPC Generico.png-c6958c0d2a733963cfaed5b30cb88a82.ctex"]
 
 [params]
 

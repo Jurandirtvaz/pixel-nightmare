@@ -17,6 +17,8 @@ var ultima_direcao: Vector2 = Vector2.DOWN
 @onready var ponto_tiro: Node2D = $PontodoTiro
 @onready var projetil = preload("res://Cenas/player/ataque/tiro_equacional.tscn")
 
+@onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
+
 @onready var placeholder: ColorRect = $ColorRect
 var esta_morto : bool = false
 
@@ -78,10 +80,24 @@ func _ready() -> void:
 	print("HUD encontrado? ", hud != null)
 
 func _sprite_parado() -> void:
-	placeholder.color = Color(1, 1, 1, 1) #Branco ele esta parado
+	if ultima_direcao.y > 0:
+		animated_sprite.play("idle_down")
+	elif ultima_direcao.y < 0:
+		animated_sprite.play("idle_up")
+	elif ultima_direcao.x < 0:
+		animated_sprite.play("idle_left")
+	elif ultima_direcao.x > 0:
+		animated_sprite.play("idle_right")
 
 func _sprite_andando() -> void:
-	placeholder.color = Color(0, 1, 0, 1) #Verde esta andando
+	if ultima_direcao.y > 0:
+		animated_sprite.play("walk_down")
+	elif ultima_direcao.y < 0:
+		animated_sprite.play("walk_up")
+	elif ultima_direcao.x < 0:
+		animated_sprite.play("walk_left")
+	elif ultima_direcao.x > 0:
+		animated_sprite.play("walk_right")
 
 func _sprite_morto() -> void:
 	placeholder.color = Color(1, 0, 0, 1) #Vermelho esta morto
