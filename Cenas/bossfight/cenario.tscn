@@ -1,12 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://dmn2q7fgq40sd"]
+[gd_scene load_steps=7 format=3 uid="uid://dmn2q7fgq40sd"]
 
 [ext_resource type="Texture2D" uid="uid://berp355qs7ynw" path="res://sprites/estacionamanto.png" id="1_xwuul"]
 [ext_resource type="PackedScene" uid="uid://dxss2p330l6nf" path="res://Cenas/boss/boss.tscn" id="2_bj8tx"]
-[ext_resource type="PackedScene" uid="uid://cpa2ntywx1rwi" path="res://Cenas/textbox/Caixa_Dialogo.tscn" id="2_exwbh"]
 [ext_resource type="PackedScene" uid="uid://8rnlj3pa11yn" path="res://Cenas/player/player.tscn" id="3_xwuul"]
 [ext_resource type="PackedScene" uid="uid://cb1ohuye5gdqu" path="res://Cenas/hud/hud.tscn" id="4_bj8tx"]
-[ext_resource type="Script" uid="uid://cqwatfa84v0mi" path="res://Cenas/bossfight/npc_teste_box.gd" id="5_6l3mj"]
-[ext_resource type="Texture2D" uid="uid://vvm0o34f0ehw" path="res://sprites/raio.png" id="7_fuqey"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lbtql"]
 size = Vector2(1081.5, 106)
@@ -14,15 +11,10 @@ size = Vector2(1081.5, 106)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6l3mj"]
 size = Vector2(128, 715)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_fuqey"]
-radius = 25.0
-
 [node name="Cenario" type="Node2D"]
 position = Vector2(-35, -14)
 
 [node name="HUD" parent="." groups=["hud"] instance=ExtResource("4_bj8tx")]
-
-[node name="CaixaDialogo" parent="." groups=["textbox"] instance=ExtResource("2_exwbh")]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
@@ -52,23 +44,7 @@ position = Vector2(648, 335)
 rotation = -0.0171482
 wait_time = 2.0
 
-[node name="Player" parent="." groups=["player"] instance=ExtResource("3_xwuul")]
+[node name="Player" parent="." instance=ExtResource("3_xwuul")]
 position = Vector2(204, 595)
 rotation = -0.00530558
-
-[node name="NPCTesteBox" type="Area2D" parent="." node_paths=PackedStringArray("textbox")]
-position = Vector2(183, 445)
-script = ExtResource("5_6l3mj")
-textbox = NodePath("../CaixaDialogo")
-
-[node name="TextureRect" type="TextureRect" parent="NPCTesteBox"]
-offset_left = -16.0
-offset_top = -12.0
-offset_right = 26.0
-offset_bottom = 25.0
-texture = ExtResource("7_fuqey")
-expand_mode = 1
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="NPCTesteBox"]
-position = Vector2(4, 6)
-shape = SubResource("CircleShape2D_fuqey")
+scale = Vector2(3, 3)
