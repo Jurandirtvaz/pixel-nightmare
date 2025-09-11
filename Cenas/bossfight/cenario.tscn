@@ -1,13 +1,12 @@
 [gd_scene load_steps=11 format=3 uid="uid://dmn2q7fgq40sd"]
 
-[ext_resource type="Texture2D" uid="uid://berp355qs7ynw" path="res://sprites/estacionamanto.png" id="1_xwuul"]
+[ext_resource type="Texture2D" uid="uid://berp355qs7ynw" path="res://Sprites/estacionamanto.png" id="1_xwuul"]
 [ext_resource type="PackedScene" uid="uid://dxss2p330l6nf" path="res://Cenas/boss/boss.tscn" id="2_bj8tx"]
 [ext_resource type="PackedScene" uid="uid://cpa2ntywx1rwi" path="res://Cenas/textbox/Caixa_Dialogo.tscn" id="2_exwbh"]
 [ext_resource type="PackedScene" uid="uid://8rnlj3pa11yn" path="res://Cenas/player/player.tscn" id="3_xwuul"]
 [ext_resource type="PackedScene" uid="uid://cb1ohuye5gdqu" path="res://Cenas/hud/hud.tscn" id="4_bj8tx"]
 [ext_resource type="Script" uid="uid://cqwatfa84v0mi" path="res://Cenas/bossfight/npc_teste_box.gd" id="5_6l3mj"]
-[ext_resource type="Texture2D" uid="uid://vvm0o34f0ehw" path="res://sprites/raio.png" id="7_fuqey"]
-
+[ext_resource type="Texture2D" uid="uid://vvm0o34f0ehw" path="res://Sprites/raio.png" id="7_fuqey"]
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lbtql"]
 size = Vector2(1081.5, 106)
 
@@ -50,9 +49,8 @@ texture = ExtResource("1_xwuul")
 [node name="BOSS" parent="." instance=ExtResource("2_bj8tx")]
 position = Vector2(648, 335)
 rotation = -0.0171482
-wait_time = 2.0
 
-[node name="Player" parent="." groups=["player"] instance=ExtResource("3_xwuul")]
+[node name="Player" parent="." instance=ExtResource("3_xwuul")]
 position = Vector2(204, 595)
 rotation = -0.00530558
 

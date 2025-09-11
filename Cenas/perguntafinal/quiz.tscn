@@ -1,0 +1,109 @@
+[gd_scene load_steps=3 format=3 uid="uid://dvj2h60kbijt2"]
+
+[ext_resource type="Script" uid="uid://c6rqa3rocwtpm" path="res://Cenas/perguntafinal/quiz.gd" id="1_y7dva"]
+[ext_resource type="FontFile" uid="uid://cfdamhje42oi2" path="res://Sprites/Assets/KiwiSoda.ttf" id="2_5lhto"]
+
+[node name="Quiz" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_y7dva")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.12
+anchor_top = 0.134
+anchor_right = 0.12
+anchor_bottom = 0.134
+offset_left = -0.240005
+offset_top = 0.167999
+offset_right = 914.76
+offset_bottom = 120.168
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_5lhto")
+theme_override_font_sizes/font_size = 80
+text = "Insira texto"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Button4" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.577
+anchor_top = 0.63
+anchor_right = 0.577
+anchor_bottom = 0.63
+offset_left = 0.295959
+offset_top = -0.240021
+offset_right = 239.296
+offset_bottom = 75.76
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_5lhto")
+theme_override_font_sizes/font_size = 30
+text = "Texto base"
+autowrap_mode = 2
+
+[node name="Button2" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.24
+anchor_top = 0.63
+anchor_right = 0.24
+anchor_bottom = 0.63
+offset_left = 0.519989
+offset_top = -0.240021
+offset_right = 239.52
+offset_bottom = 75.76
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_5lhto")
+theme_override_font_sizes/font_size = 30
+text = "Texto base"
+autowrap_mode = 2
+
+[node name="Button3" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.578
+anchor_top = 0.417
+anchor_right = 0.578
+anchor_bottom = 0.417
+offset_left = 0.143982
+offset_top = -0.216003
+offset_right = 239.144
+offset_bottom = 75.784
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_5lhto")
+theme_override_font_sizes/font_size = 30
+text = "Texto base"
+autowrap_mode = 2
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.242
+anchor_top = 0.417
+anchor_right = 0.242
+anchor_bottom = 0.417
+offset_left = 0.215973
+offset_top = -0.216003
+offset_right = 239.216
+offset_bottom = 75.784
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_5lhto")
+theme_override_font_sizes/font_size = 30
+text = "Texto base"
+autowrap_mode = 2
+
+[connection signal="pressed" from="Button4" to="." method="_on_button_4_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="Button3" to="." method="_on_button_3_pressed"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://4dstygftnj3f"
-path="res://.godot/imported/Dano em area.png-7c2b56f2ee8a853f2a4746d17de9069c.ctex"
+uid="uid://c7rom1i8jq10k"
+path="res://.godot/imported/sprites mao andando2.png-5fa5a4de6397b7b6c150c5574059cdde.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Dano em area.png"
-dest_files=["res://.godot/imported/Dano em area.png-7c2b56f2ee8a853f2a4746d17de9069c.ctex"]
+source_file="res://Sprites/Chefão/sprites mao andando2.png"
+dest_files=["res://.godot/imported/sprites mao andando2.png-5fa5a4de6397b7b6c150c5574059cdde.ctex"]
 
 [params]
 
