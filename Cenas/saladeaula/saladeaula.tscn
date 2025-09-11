@@ -365,70 +365,70 @@ position = Vector2(785, 153)
 scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_i8ei7")
 autoplay = "default"
-frame_progress = 0.984921
+frame_progress = 0.0372085
 
 [node name="NpcGenerico5" type="AnimatedSprite2D" parent="."]
 position = Vector2(447, 224)
 scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_me3rx")
 autoplay = "default"
-frame_progress = 0.871322
+frame_progress = 0.92361
 
 [node name="NpcGenerico8" type="AnimatedSprite2D" parent="."]
 position = Vector2(957, 238)
 scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_rw0a2")
 autoplay = "default"
-frame_progress = 0.898122
+frame_progress = 0.950412
 
 [node name="NpcGenerico9" type="AnimatedSprite2D" parent="."]
 position = Vector2(447, 321)
 scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_k2lmf")
 autoplay = "default"
-frame_progress = 0.620072
+frame_progress = 0.672358
 
 [node name="NpcGenerico10" type="AnimatedSprite2D" parent="."]
 position = Vector2(608, 326)
 scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_bdvb4")
 autoplay = "default"
-frame_progress = 0.54429
+frame_progress = 0.596577
 
 [node name="NpcGenerico" type="AnimatedSprite2D" parent="."]
 position = Vector2(292, 156)
 scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_mckex")
 autoplay = "default"
-frame_progress = 0.242441
+frame_progress = 0.294732
 
 [node name="NpcGenerico11" type="AnimatedSprite2D" parent="."]
 position = Vector2(786, 320)
 scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_i4hp1")
 autoplay = "default"
-frame_progress = 0.333748
+frame_progress = 0.386034
 
 [node name="NpcGenerico12" type="AnimatedSprite2D" parent="."]
 position = Vector2(957, 348)
 scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_km85e")
 autoplay = "default"
-frame_progress = 0.963517
+frame_progress = 0.0158038
 
 [node name="NpcGenerico13" type="AnimatedSprite2D" parent="."]
 position = Vector2(961, 440)
 scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_6oxdr")
 autoplay = "default"
-frame_progress = 0.270916
+frame_progress = 0.323207
 
 [node name="NpcGenerico15" type="AnimatedSprite2D" parent="."]
 position = Vector2(290.5, 224)
 scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_1pjjy")
 autoplay = "default"
-frame_progress = 0.50037
+frame_progress = 0.552656
 
 [node name="Cadira" type="Sprite2D" parent="."]
 position = Vector2(288, 309)

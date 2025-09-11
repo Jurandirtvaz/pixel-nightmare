@@ -6,8 +6,10 @@ extends CanvasLayer
 ]
 
 @onready var boss_hp_bar: ProgressBar = $UI/BossHPBar
+@onready var boss_name_label: Label = $UI/BossNameLabel
 
 var vidas_atuais: int = 3
+var hp_tween: Tween
 
 func _ready() -> void:
 	atualizar_vidas(vidas_atuais)
@@ -35,6 +37,8 @@ func piscar_vida(indice:int) -> void:
 	
 	
 func atualizar_vida_boss(vida_atual: float, vida_maxima: float) -> void:
+	boss_name_label.text = "Icaro's Hand"
+
 	if not boss_hp_bar.visible:
 		boss_hp_bar.visible = true
 		
@@ -42,4 +46,8 @@ func atualizar_vida_boss(vida_atual: float, vida_maxima: float) -> void:
 	
 	boss_hp_bar.max_value = vida_maxima
 	
-	boss_hp_bar.value = vida_atual
+	if hp_tween:
+		hp_tween.kill()
+		
+	hp_tween = get_tree().create_tween()
+	hp_tween.tween_property(boss_hp_bar, "value", vida_atual, 0.3)

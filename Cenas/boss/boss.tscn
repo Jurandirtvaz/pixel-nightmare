@@ -1,6 +1,5 @@
 [gd_scene load_steps=16 format=3 uid="uid://dxss2p330l6nf"]
 
-
 [ext_resource type="Script" uid="uid://dro4td8kciudk" path="res://Cenas/boss/boss.gd" id="1_s4p10"]
 [ext_resource type="Texture2D" uid="uid://bf81ct0qrt6l4" path="res://sprites/Mão 2.png" id="2_catpj"]
 [ext_resource type="PackedScene" uid="uid://dkncw2u2kbc1l" path="res://Cenas/boss/ataque/shockwave.tscn" id="3_skx2t"]
@@ -107,7 +106,6 @@ sprite_frames = SubResource("SpriteFrames_1s1j2")
 animation = &"Idle"
 
 [node name="Shockwave" parent="." instance=ExtResource("3_skx2t")]
-position = Vector2(0, -1)
 position = Vector2(1, 0)
 scale = Vector2(10, 10)
 

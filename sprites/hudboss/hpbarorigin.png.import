@@ -2,16 +2,17 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bg2cl44weuymf"
-path="res://.godot/imported/Logo Placeholder.png-c2071146cd7993d003f4d957b0c27a79.ctex"
+uid="uid://8mnr000r7ao3"
+path="res://.godot/imported/hpbarorigin.png-99bde555ac520985b3106ac2060dcb4d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/menu/Logo/Logo Placeholder.png"
-dest_files=["res://.godot/imported/Logo Placeholder.png-63d8b2dc1397c5868f9ae87b0ff854c6.ctex"]
+source_file="res://sprites/hudboss/hpbarorigin.png"
+dest_files=["res://.godot/imported/hpbarorigin.png-99bde555ac520985b3106ac2060dcb4d.ctex"]
+
 [params]
 
 compress/mode=0
