@@ -10,8 +10,10 @@ var vidas: int = vidas_maximas #Vida atual
 var hud : Node
 
 #Ataque
-@export var dano_ataque: int = 10
-@export var reload: float = 0.4
+@export var dano_ataque: int = 5
+@export var reload: float = 0.8
+@export var travar_apos_tiro: float = 0.20 #tempo que o player vai ficar parado
+var movimento_travado: bool = false
 var pode_atirar: bool = true
 var ultima_direcao: Vector2 = Vector2.DOWN
 @onready var ponto_tiro: Node2D = $PontodoTiro
@@ -25,6 +27,10 @@ var esta_morto : bool = false
 func _physics_process(delta: float) -> void:
 	if esta_morto:
 		return
+	
+	if movimento_travado:
+		velocity = velocity.move_toward(Vector2.ZERO, friction * delta)
+		move_and_slide()
 	
 	var input_vector := Vector2.ZERO
 	input_vector.x = Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
@@ -103,17 +109,31 @@ func _sprite_morto() -> void:
 	placeholder.color = Color(1, 0, 0, 1) #Vermelho esta morto
 
 func _atirar() -> void:
-	if not pode_atirar:
+	if not pode_atirar or movimento_travado:
 		return
 	pode_atirar = false
+	movimento_travado = true
+	velocity = Vector2.ZERO
 	
 	var proj = projetil.instantiate()
 	proj.global_position = ponto_tiro.global_position
-	proj.direcao = ultima_direcao
+	#Ajuste para ele atirar pela direcao do mouse
+	var dir := get_global_mouse_position() - ponto_tiro.global_position
+	if dir.length() < 0.001:
+		dir = Vector2.RIGHT #fallback
+	else: 
+		dir = dir.normalized()
+		
+	proj.direcao = dir
 	proj.dano = dano_ataque
 	proj.atirador = self
-	get_parent().add_child(proj) 
+	get_parent().add_child(proj)
 	
-	await get_tree().create_timer(reload).timeout
+	var t_reload := get_tree().create_timer(reload)
+	var t_travado := get_tree().create_timer(travar_apos_tiro) 
+	
+	await t_travado.timeout
+	movimento_travado = false
+	
+	await t_reload.timeout
 	pode_atirar = true
-	
