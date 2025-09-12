@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://qkkv5bws1x58" path="res://sprites/Chefão/mão batendo.png" id="7_p0xwj"]
 [ext_resource type="Texture2D" uid="uid://cr65gpv8kqiag" path="res://sprites/Chefão/mao apontando sprite.png" id="8_qjte0"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_skx2t"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mfxp8"]
 size = Vector2(70, 67)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_1s1j2"]
@@ -40,8 +40,8 @@ collision_layer = 2
 script = ExtResource("1_s4p10")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 0.5)
-shape = SubResource("RectangleShape2D_skx2t")
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_mfxp8")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -5)
@@ -50,7 +50,7 @@ sprite_frames = SubResource("SpriteFrames_1s1j2")
 animation = &"Idle"
 
 [node name="Shockwave" parent="." instance=ExtResource("3_skx2t")]
-position = Vector2(1, 0)
+position = Vector2(6, 5)
 scale = Vector2(10, 10)
 
 [node name="Bullet" parent="." instance=ExtResource("4_lnbgr")]
@@ -58,6 +58,7 @@ position = Vector2(-15, -20)
 scale = Vector2(0.03, 0.03)
 
 [node name="Atirar" type="Sprite2D" parent="."]
+visible = false
 scale = Vector2(1.381, 1.381)
 texture = ExtResource("8_qjte0")
 
@@ -71,3 +72,8 @@ scale = Vector2(0.724113, 0.724113)
 position = Vector2(1, 0)
 scale = Vector2(1.381, 1.381)
 texture = ExtResource("7_p0xwj")
+
+[node name="WavePoint" type="Node2D" parent="Punho"]
+
+[node name="Marker2D" type="Marker2D" parent="Punho/WavePoint"]
+position = Vector2(62.9978, 53.5844)
