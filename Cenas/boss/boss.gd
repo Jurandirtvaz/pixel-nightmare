@@ -245,4 +245,6 @@ func reviver(percentual_vida: float):
 
 func morrer_definitivamente():
 	# Morte definitiva
-	queue_free()
+	GameState.proxima_cutscene = "fim"
+	get_tree().change_scene_to_file("res://Cenas/saladeaula/saladeaula.tscn")
+	
