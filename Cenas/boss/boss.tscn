@@ -43,17 +43,11 @@ script = ExtResource("1_s4p10")
 position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_skx2t")
 
-[node name="ShootPoint" type="Node2D" parent="."]
-position = Vector2(44, -13)
-
-[node name="Marker2D" type="Marker2D" parent="ShootPoint"]
-
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -5)
 scale = Vector2(1.554, 1.381)
 sprite_frames = SubResource("SpriteFrames_1s1j2")
 animation = &"Idle"
-frame_progress = 0.950023
 
 [node name="Shockwave" parent="." instance=ExtResource("3_skx2t")]
 position = Vector2(1, 0)
@@ -67,6 +61,13 @@ scale = Vector2(0.03, 0.03)
 scale = Vector2(1.381, 1.381)
 texture = ExtResource("8_qjte0")
 
+[node name="ShootPoint" type="Node2D" parent="Atirar"]
+position = Vector2(63.7219, -10.1376)
+scale = Vector2(0.724113, 0.724113)
+
+[node name="Marker2D" type="Marker2D" parent="Atirar/ShootPoint"]
+
 [node name="Punho" type="Sprite2D" parent="."]
+position = Vector2(1, 0)
 scale = Vector2(1.381, 1.381)
 texture = ExtResource("7_p0xwj")

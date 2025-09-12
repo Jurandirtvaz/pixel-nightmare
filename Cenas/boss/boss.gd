@@ -9,7 +9,7 @@ extends CharacterBody2D
 @export var wait_time: float = 1.0
 @export var attack_damage: int = 1
 @export var max_hp: float = 100
-@export var num_shots = 7
+@export var num_shots = 5
 
 var hp: float
 var phase2 = false
@@ -158,7 +158,7 @@ func _disparar_lasers(angulo_final: float, direcao_base: Vector2):
 	var laser_scene = preload("res://Cenas/boss/ataque/bullet.tscn")
 	
 	# Calcula a posição do shoot_point baseado na rotação atual
-	var shoot_pos = atirar.global_position + Vector2(cos(angulo_final), sin(angulo_final)) * 50
+	var shoot_pos = shoot_point.global_position
 	
 	# Usa a direção base que já foi calculada
 	var base_dir = direcao_base
