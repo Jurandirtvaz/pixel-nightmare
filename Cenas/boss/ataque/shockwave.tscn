@@ -1,7 +1,7 @@
 [gd_scene load_steps=13 format=3 uid="uid://dkncw2u2kbc1l"]
 
-[ext_resource type="Script" uid="uid://dkspdl58j1cie" path="res://Cenas/boss/ataque/shockwave.gd" id="1_pkgyo"]
-[ext_resource type="Texture2D" uid="uid://cxorow41ba5fv" path="res://sprites/Chefão/Onda de choque-Sheet.png" id="2_4d6yv"]
+[ext_resource type="Script" uid="uid://dkspdl58j1cie" path="res://Cenas/boss/boss/ataque/shockwave.gd" id="1_pkgyo"]
+[ext_resource type="Texture2D" uid="uid://cvib66q2m3cpa" path="res://sprites/Chefão/Onda de choque-Sheet.png" id="2_4d6yv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4d6yv"]
 atlas = ExtResource("2_4d6yv")
