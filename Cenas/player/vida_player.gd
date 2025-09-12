@@ -3,7 +3,7 @@ extends Node
 #variaveis da vida do player
 var vidas_maximas: int = 3
 var vidas_atual: int = vidas_maximas
-	
+
 func resetar_vidas():
 	vidas_atual = vidas_maximas
 	print("Vidas resetadas para:", vidas_atual)

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://0ql3w6mceoi"
-path="res://.godot/imported/fillboss.png-8b2267fa5da5df890f71582c9aad1848.ctex"
+path="res://.godot/imported/fillboss.png-7821ef40e3d1e14ae15975790f120fce.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/hudboss/fillboss.png"
-dest_files=["res://.godot/imported/fillboss.png-8b2267fa5da5df890f71582c9aad1848.ctex"]
+source_file="res://sprites/hudboss/fillboss.png"
+dest_files=["res://.godot/imported/fillboss.png-7821ef40e3d1e14ae15975790f120fce.ctex"]
 
 [params]
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://c0sr0o0u4ogax"]
+[gd_scene load_steps=4 format=3 uid="uid://c0sr0o0u4ogax"]
 
 [ext_resource type="Script" uid="uid://d1l6w4t3faesn" path="res://cenas/boss/ataque/bullet.gd" id="1_v7oki"]
 [ext_resource type="Texture2D" uid="uid://vvm0o34f0ehw" path="res://sprites/raio.png" id="2_v8qja"]
@@ -9,11 +9,10 @@
 collision_layer = 4
 script = ExtResource("1_v7oki")
 
-[node name="Bala" type="AnimatedSprite2D" parent="."]
-position = Vector2(-1.5, -0.499999)
-scale = Vector2(1.20833, 1.70833)
-sprite_frames = SubResource("SpriteFrames_ghfj0")
-frame_progress = 0.941921
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1, 0)
+scale = Vector2(0.0253906, 0.0219726)
+texture = ExtResource("2_v8qja")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_v7oki")
