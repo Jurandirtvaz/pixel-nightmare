@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://dry6n8a3v6rss"]
+[gd_scene load_steps=6 format=3 uid="uid://dry6n8a3v6rss"]
 
 [sub_resource type="Animation" id="Animation_sch35"]
 length = 0.001
@@ -45,9 +45,25 @@ tracks/0/keys = {
 "values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
 }
 
+[sub_resource type="Animation" id="Animation_ukh7i"]
+resource_name = "fade_boss"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(1, 1, 1, 1)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ukh7i"]
 _data = {
 &"RESET": SubResource("Animation_sch35"),
+&"fade_boss": SubResource("Animation_ukh7i"),
 &"fade_in": SubResource("Animation_ihrkt"),
 &"fade_out": SubResource("Animation_1ator")
 }

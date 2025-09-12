@@ -5,7 +5,8 @@ extends CharacterBody2D
 @onready var atirar = $Atirar
 @onready var shoot_point = $Atirar/ShootPoint
 @onready var wave_point = $Punho/WavePoint
-
+@onready var fade_transition = $FadeTransition
+@onready var animation_boss_fade = $FadeTransition/AnimationPlayer
 
 @export var speed: float = 100
 @export var wait_time: float = 1.0
@@ -25,10 +26,13 @@ var esta_morto = false
 var player: CharacterBody2D = null
 var target_position: Vector2
 var moving: bool = false
+var is_attacking: bool = false
 var state_timer: Timer
 var attack_origin_position: Vector2
 
 func _ready():
+	animation_boss_fade.animation_finished.connect(_on_fade_finished)
+	
 	animacao.play()
 	punho.hide()
 	atirar.hide()
@@ -40,6 +44,7 @@ func _ready():
 	
 	hud = get_tree().get_first_node_in_group("hud")
 	var players = get_tree().get_nodes_in_group("player")
+	await get_tree().create_timer(3).timeout
 	if players.size() > 0:
 		player = players[0]
 		_go_to_player()
@@ -47,7 +52,7 @@ func _ready():
 		get_tree().connect("node_added", Callable(self, "_on_node_added"))
 
 func _physics_process(delta):
-	if moving and player and not esta_morto:
+	if moving and player and not esta_morto and not is_attacking:
 		var dir = (target_position - global_position).normalized()
 		velocity = dir * speed
 		move_and_slide()
@@ -56,10 +61,10 @@ func _physics_process(delta):
 			velocity = Vector2.ZERO
 			moving = false
 			attack()
-			state_timer.start(wait_time)
+			# state_timer.start(wait_time)
 
 func _on_state_timer_timeout():
-	if player and not esta_morto:
+	if player and not esta_morto and not is_attacking:
 		_go_to_player()
 
 func _go_to_player():
@@ -77,6 +82,9 @@ func _on_node_added(node):
 # ATAQUES COM ANIMAÇÕES
 # ======================
 func attack():
+	if is_attacking: return 
+	is_attacking = true
+	
 	# Esconde o sprite principal e mostra o punho
 	attack_origin_position = global_position
 	animacao.hide()
@@ -95,6 +103,7 @@ func attack():
 	tween_subida.tween_property(punho, "position", posicao_alto, 0.2).set_ease(Tween.EASE_OUT)
 	
 	# Quando terminar a subida, inicia a descida
+	
 	tween_subida.finished.connect(_iniciar_descida.bind(posicao_original))
 
 func _iniciar_descida(posicao_original):
@@ -125,6 +134,9 @@ func _criar_onda_de_choque():
 		await get_tree().create_timer(0.3).timeout
 		punho.hide()
 		animacao.show()
+		
+		is_attacking = false
+		state_timer.start(wait_time)
 
 func attack_laser():
 	# Mostra o sprite de atirar e esconde os outros
@@ -190,6 +202,8 @@ func _disparar_lasers(angulo_final: float, direcao_base: Vector2):
 	await get_tree().create_timer(0.5).timeout
 	atirar.hide()
 	animacao.show()
+	is_attacking = false
+	state_timer.start(wait_time)
 
 # Função auxiliar para shake de câmera (opcional)
 func _adicionar_shake_camera(duracao: float, intensidade: float):
@@ -254,5 +268,11 @@ func reviver(percentual_vida: float):
 func morrer_definitivamente():
 	# Morte definitiva
 	GameState.proxima_cutscene = "fim"
-	get_tree().change_scene_to_file("res://Cenas/saladeaula/saladeaula.tscn")
+	animation_boss_fade.play("fade_boss")
+	# get_tree().change_scene_to_file("res://Cenas/saladeaula/saladeaula.tscn")
+	
+func _on_fade_finished(anim_name):
+	if anim_name == "fade_boss":
+			print("Fade concluído. Carregando cena do final!")
+			get_tree().change_scene_to_file("res://Cenas/saladeaula/saladeaula.tscn")
 	

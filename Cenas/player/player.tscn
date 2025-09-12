@@ -293,7 +293,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sweqy"]
-size = Vector2(25, 40)
+size = Vector2(25, 30)
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 collision_mask = 2
@@ -303,13 +303,17 @@ script = ExtResource("1_onrkg")
 position = Vector2(1, -5.72205e-06)
 scale = Vector2(0.367188, 0.375)
 sprite_frames = SubResource("SpriteFrames_hqtel")
-animation = &"death"
+animation = &"attack_right"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1, 0)
 shape = SubResource("RectangleShape2D_sweqy")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+limit_left = 44
+limit_top = 20
+limit_right = 2584
+limit_bottom = 1850
 limit_smoothed = true
 
 [node name="ColorRect" type="ColorRect" parent="."]

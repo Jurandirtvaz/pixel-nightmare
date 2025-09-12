@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dxss2p330l6nf"]
+[gd_scene load_steps=12 format=3 uid="uid://dxss2p330l6nf"]
 
 [ext_resource type="Script" uid="uid://dro4td8kciudk" path="res://Cenas/boss/boss.gd" id="1_s4p10"]
 [ext_resource type="Texture2D" uid="uid://chla2ay1a3660" path="res://sprites/Chefão/sprites mao andando1.png" id="2_mfxp8"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://b3jkd2qjumlno" path="res://sprites/Chefão/sprites mao andando3.png" id="4_xvl7h"]
 [ext_resource type="Texture2D" uid="uid://qkkv5bws1x58" path="res://sprites/Chefão/mão batendo.png" id="7_p0xwj"]
 [ext_resource type="Texture2D" uid="uid://cr65gpv8kqiag" path="res://sprites/Chefão/mao apontando sprite.png" id="8_qjte0"]
+[ext_resource type="PackedScene" uid="uid://dry6n8a3v6rss" path="res://Cenas/transition/FadeTransition.tscn" id="9_nmsfa"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mfxp8"]
 size = Vector2(70, 67)
@@ -78,3 +79,5 @@ texture = ExtResource("7_p0xwj")
 
 [node name="Marker2D" type="Marker2D" parent="Punho/WavePoint"]
 position = Vector2(62.9978, 53.5844)
+
+[node name="FadeTransition" parent="." instance=ExtResource("9_nmsfa")]

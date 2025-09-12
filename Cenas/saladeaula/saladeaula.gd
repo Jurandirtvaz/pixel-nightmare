@@ -71,7 +71,8 @@ func _on_dialogue_finished():
 			print("Diálogo do aluno terminou. Fim do jogo.")
 			# O diálogo do aluno terminou, a cutscene acabou
 			current_cutscene_step = "finalizado"
-			# get_tree().change_scene_to_file("res://cenas/fim.tscn")
+			animation_player_fade.play("fade_out")
+			
 
 
 func _on_animation_finished():
@@ -98,3 +99,6 @@ func _on_fade_finished(anim_name):
 		if current_cutscene_step == "transicao_para_luta":
 			print("Fade concluído. Carregando cena do limbo!")
 			get_tree().change_scene_to_file("res://Cenas/saladeaula/limbo/limbo.tscn")
+	if current_cutscene_step == "finalizado":
+			print("Fade concluído. Carregando cena do final!")
+			get_tree().change_scene_to_file("res://Cenas/final/fim.tscn")
