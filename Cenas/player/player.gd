@@ -26,6 +26,7 @@ var ultima_direcao: Vector2 = Vector2.DOWN
 @onready var collision_shape: CollisionShape2D = $CollisionShape2D
 @onready var placeholder: ColorRect = $ColorRect
 var esta_morto : bool = false
+var esta_imune: bool = false
 
 func _physics_process(delta: float) -> void:
 	if esta_morto:
@@ -60,7 +61,7 @@ func _physics_process(delta: float) -> void:
 		_atirar()
 
 func tomar_dano() -> void:
-	if invencivel or esta_morto:
+	if invencivel or esta_morto or esta_imune:
 		return
 	
 	if VidaPlayer.vidas_atual <= 0:
@@ -212,3 +213,6 @@ func finalizar_invencibilidade() -> void:
 	# Reativa a colisão se não estiver morto
 	if collision_shape and not esta_morto:
 		collision_shape.disabled = false
+		
+func set_imunidade(imune: bool):
+	esta_imune = imune

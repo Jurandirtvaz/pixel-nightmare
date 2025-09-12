@@ -1,64 +1,93 @@
-extends Control
+extends CanvasLayer
 
-@onready var Pergunta = $Label
-@onready var botao1 = $Button
-@onready var botao2 = $Button2
-@onready var botao3 = $Button3
-@onready var botao4 = $Button4
+@onready var pergunta_label = $Panel/Label
+@onready var botao1 = $Panel/Button1
+@onready var botao2 = $Panel/Button2
+@onready var botao3 = $Panel/Button3
+@onready var botao4 = $Panel/Button4
 
-var possiveisPerguntas = []
-var perguntaEscolhida
-var resposta_correta: int
+var boss: Node = null
+var pergunta_atual: Dictionary
 
 func _ready():
-	# Carrega as perguntas
-	possiveisPerguntas = read_json("res://Cenas/perguntafinal/Perguntas.json")
-	if possiveisPerguntas:
-		exibir_pergunta()
-
-func exibir_pergunta():
-	botao1.show()
-	botao2.show()
-	botao3.show()
-	botao4.show()
-	# Escolhe uma pergunta aleatória
-	var indice_aleatorio = randi() % possiveisPerguntas.size()
-	perguntaEscolhida = possiveisPerguntas[indice_aleatorio]
+	add_to_group("quiz")
+	carregar_perguntas()
+	exibir_pergunta_aleatoria()
+	animar_entrada()
+	proteger_player()
 	
-	Pergunta.text = perguntaEscolhida["pergunta"]
-	
-	botao1.text = perguntaEscolhida["opcoes"][0]
-	botao2.text = perguntaEscolhida["opcoes"][1]
-	botao3.text = perguntaEscolhida["opcoes"][2]
-	botao4.text = perguntaEscolhida["opcoes"][3]
-	resposta_correta = perguntaEscolhida["opcaocorreta"]
+func carregar_perguntas():
+	var perguntas = read_json("res://Cenas/perguntafinal/Perguntas.json")
+	pergunta_atual = perguntas[randi_range(0, 2)]
 
-func verificar_resposta(botao_index: int):
-	if botao_index == resposta_correta:
-		print("Resposta correta!")
+func exibir_pergunta_aleatoria():
+	pergunta_label.text = pergunta_atual["pergunta"]
+	botao1.text = pergunta_atual["opcoes"][0]
+	botao2.text = pergunta_atual["opcoes"][1]
+	botao3.text = pergunta_atual["opcoes"][2]
+	botao4.text = pergunta_atual["opcoes"][3]
+
+func verificar_resposta(indice: int):
+	if indice == pergunta_atual["opcaocorreta"]:
+		acerto()
 	else:
-		print("Resposta errada! A correta era: ", perguntaEscolhida["opcoes"][resposta_correta])
-	exibir_pergunta()
-	
-func _on_button_pressed():
-	verificar_resposta(0)
-func _on_button_2_pressed():
-	verificar_resposta(1)
-func _on_button_3_pressed():
-	verificar_resposta(2)
-func _on_button_4_pressed():
-	verificar_resposta(3)
-	
+		erro()
+
+func acerto():
+	remover_protecao_player()
+	if boss:
+		boss.morrer_definitivamente()
+	queue_free()
+
+func erro():
+	remover_protecao_player()
+	if boss:
+		boss.reviver(0.3)  
+	queue_free()
+
 func read_json(arquivo):
-	var file = FileAccess.open(arquivo, FileAccess.READ)
-	var content = file.get_as_text()
-	file.close()
-	var json = JSON.new()
-	var error = json.parse(content)
-	if error == OK:
-		print(json.get_data())
-		return json.get_data()
-	else:
-		print("Erro JSON: ", json.get_error_message())
-		return null
+	if not FileAccess.file_exists(arquivo):
+		return []
 	
+	var file = FileAccess.open(arquivo, FileAccess.READ)
+	if file == null:
+		return []
+	
+	var text = file.get_as_text()
+	file.close()
+	
+	var json = JSON.new()
+	var parse_result = json.parse(text)
+	
+	if parse_result != OK:
+		return []
+	
+	return json.get_data()
+	
+func animar_entrada():
+	$Panel.scale = Vector2(0.5, 0.5)
+	$Panel.modulate = Color(1, 1, 1, 0)
+	
+	var tween = create_tween()
+	tween.set_parallel(true)
+	tween.tween_property($Panel, "scale", Vector2(1, 1), 0.3).set_ease(Tween.EASE_OUT)
+	tween.tween_property($Panel, "modulate", Color(1, 1, 1, 1), 0.3).set_ease(Tween.EASE_OUT)
+	
+func proteger_player():
+	var player = get_tree().get_first_node_in_group("player")
+	if player and player.has_method("set_imunidade"):
+		player.set_imunidade(true)
+
+func remover_protecao_player():
+	var player = get_tree().get_first_node_in_group("player")
+	if player and player.has_method("set_imunidade"):
+		player.set_imunidade(false)
+		
+func _on_button_1_pressed() -> void:
+	verificar_resposta(0)
+func _on_button_2_pressed() -> void:
+	verificar_resposta(1)
+func _on_button_3_pressed() -> void:
+	verificar_resposta(2)
+func _on_button_4_pressed() -> void:
+	verificar_resposta(3)
