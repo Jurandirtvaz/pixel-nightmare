@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c4bbluwf38a56"
-path="res://.godot/imported/saladireita.jpg-19507bfd4c0cf3c56d145ea0388edecf.ctex"
+path="res://.godot/imported/saladireita.jpg-2abc9eca4389d27453d3ceb7e390cfbe.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/Menu/saladireita.jpg"
-dest_files=["res://.godot/imported/saladireita.jpg-19507bfd4c0cf3c56d145ea0388edecf.ctex"]
+source_file="res://sprites/menu/saladireita.jpg"
+dest_files=["res://.godot/imported/saladireita.jpg-2abc9eca4389d27453d3ceb7e390cfbe.ctex"]
 
 [params]
 

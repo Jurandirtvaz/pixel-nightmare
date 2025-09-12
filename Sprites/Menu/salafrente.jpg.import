@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bh53lbfefqfp0"
-path="res://.godot/imported/salafrente.jpg-dec6b3c0ba78b40a81de1d0ae83389f8.ctex"
+path="res://.godot/imported/salafrente.jpg-41ece43e0a7c731e6cc043f104781ad2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/Menu/salafrente.jpg"
-dest_files=["res://.godot/imported/salafrente.jpg-dec6b3c0ba78b40a81de1d0ae83389f8.ctex"]
+source_file="res://sprites/menu/salafrente.jpg"
+dest_files=["res://.godot/imported/salafrente.jpg-41ece43e0a7c731e6cc043f104781ad2.ctex"]
 
 [params]
 

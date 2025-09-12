@@ -44,5 +44,5 @@ func _on_dialogue_finished():
 func _on_fade_finished(anim_name):
 	if anim_name == "fade_out":
 		print("Fade concluído. Carregando cena do chefe!")
-	get_tree().change_scene_to_file("res://Cenas/bossfight/cenario.tscn")
+	get_tree().change_scene_to_file("res://Cenas/saladeaula/limbo/limbo.tscn")
 	

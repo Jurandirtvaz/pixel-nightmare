@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://cb1ohuye5gdqu"]
+[gd_scene load_steps=8 format=3 uid="uid://cb1ohuye5gdqu"]
 
 [ext_resource type="Script" uid="uid://2mtbuhxutvhm" path="res://Cenas/hud/hud.gd" id="1_37p78"]
+[ext_resource type="Texture2D" uid="uid://dpkuf1dr0r566" path="res://sprites/Hud/playercabeca_vida.png" id="2_0aydj"]
 [ext_resource type="FontFile" uid="uid://cfdamhje42oi2" path="res://sprites/Assets/KiwiSoda.ttf" id="2_gp3hh"]
 [ext_resource type="Texture2D" uid="uid://8mnr000r7ao3" path="res://sprites/hudboss/hpbarorigin.png" id="3_0aydj"]
 [ext_resource type="Texture2D" uid="uid://0ql3w6mceoi" path="res://sprites/hudboss/fillboss.png" id="4_gr1d7"]
@@ -43,17 +44,17 @@ theme_override_constants/separation = 4
 [node name="Vida1" type="TextureRect" parent="UI/Vidas"]
 custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
-texture = ExtResource("2_2k5c4")
+texture = ExtResource("2_0aydj")
 
 [node name="Vida2" type="TextureRect" parent="UI/Vidas"]
 custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
-texture = ExtResource("2_2k5c4")
+texture = ExtResource("2_0aydj")
 
 [node name="Vida3" type="TextureRect" parent="UI/Vidas"]
 custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
-texture = ExtResource("2_2k5c4")
+texture = ExtResource("2_0aydj")
 
 [node name="BossHPBar" type="ProgressBar" parent="UI"]
 modulate = Color(1, 0, 0, 1)
