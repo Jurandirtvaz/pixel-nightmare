@@ -34,6 +34,8 @@ func _physics_process(delta: float) -> void:
 func _quando_colidir(alvo: Node) -> void:
 	if alvo == atirador:
 		return
+	if alvo.is_in_group("shockwave"): 
+		return
 	if alvo.has_method("receber_dano"):
 		alvo.receber_dano(dano)
 	queue_free()

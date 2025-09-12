@@ -45,6 +45,7 @@ texture = ExtResource("1_xwuul")
 [node name="BOSS" parent="." instance=ExtResource("2_bj8tx")]
 position = Vector2(648, 335)
 rotation = -0.0171482
+scale = Vector2(2, 2)
 
 [node name="Player" parent="." instance=ExtResource("3_xwuul")]
 position = Vector2(204, 595)
