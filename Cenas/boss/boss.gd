@@ -4,12 +4,17 @@ extends CharacterBody2D
 @onready var punho = $Punho
 @onready var atirar = $Atirar
 @onready var shoot_point = $Atirar/ShootPoint
+@onready var wave_point = $Punho/WavePoint
+
 
 @export var speed: float = 100
 @export var wait_time: float = 1.0
 @export var attack_damage: int = 1
 @export var max_hp: float = 100
 @export var num_shots = 5
+
+
+
 
 var hp: float
 var phase2 = false
@@ -21,6 +26,7 @@ var player: CharacterBody2D = null
 var target_position: Vector2
 var moving: bool = false
 var state_timer: Timer
+var attack_origin_position: Vector2
 
 func _ready():
 	animacao.play()
@@ -72,11 +78,13 @@ func _on_node_added(node):
 # ======================
 func attack():
 	# Esconde o sprite principal e mostra o punho
+	attack_origin_position = global_position
 	animacao.hide()
 	punho.show()
 	atirar.hide()
 	punho.position = Vector2.ZERO
 	punho.scale = Vector2(1.381, 1.381)
+	
 	
 	# Guarda a posição original
 	var posicao_original = punho.position
@@ -101,7 +109,7 @@ func _criar_onda_de_choque():
 	# Cria a onda de choque na posição do boss
 	var wave_scene = preload("res://Cenas/boss/ataque/shockwave.tscn")
 	var wave = wave_scene.instantiate()
-	wave.global_position = global_position
+	wave.global_position = wave_point.global_position
 	wave.attack_damage = attack_damage
 	get_parent().add_child(wave)
 	
