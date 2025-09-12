@@ -61,12 +61,11 @@ func _on_node_added(node):
 # ATAQUES
 # ======================
 func attack():
-	# Ataque normal (onda de impacto)
-	var wave_scene = preload("res://Cenas/boss/ataque/shockwave.tscn")
-	var wave = wave_scene.instantiate()
-	wave.global_position = global_position
-	wave.attack_damage = attack_damage
-	get_parent().add_child(wave)
+	var shockwave_scene = preload("res://cenas/boss/ataque/shockwave.tscn")
+	var shockwave = shockwave_scene.instantiate()
+	shockwave.global_position = global_position  # centraliza no boss
+	get_parent().add_child(shockwave)
+
 
 	# Se estiver na fase 2, atira tambémdddd
 	if phase2:
