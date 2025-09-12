@@ -19,15 +19,15 @@ var tween_invencibilidade: Tween
 var movimento_travado: bool = false
 var pode_atirar: bool = true
 var ultima_direcao: Vector2 = Vector2.DOWN
-@onready var ponto_tiro: Node2D = $PontodoTiro
+var travado_por_pergunta: bool = false
 @onready var projetil = preload("res://Cenas/player/ataque/tiro_equacional.tscn")
+
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var collision_shape: CollisionShape2D = $CollisionShape2D
 @onready var placeholder: ColorRect = $ColorRect
 var esta_morto : bool = false
 var esta_imune : bool = false
-var travado_por_pergunta: bool = false
 
 func _physics_process(delta: float) -> void:
 	if esta_morto or travado_por_pergunta:
@@ -41,6 +41,7 @@ func _physics_process(delta: float) -> void:
 	if movimento_travado:
 		velocity = velocity.move_toward(Vector2.ZERO, friction * delta)
 		move_and_slide()
+		return #
 	
 	var input_vector := Vector2.ZERO
 	input_vector.x = Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
@@ -89,7 +90,7 @@ func morrer() -> void:
 	
 	finalizar_invencibilidade()
 	
-	await get_tree().create_timer(0.3).timeout
+	await get_tree().create_timer(1.2).timeout
 	
 	#Adicionando o game-over como overlay
 	var overlay = preload("res://Cenas/gameover/game_over.tscn").instantiate()
@@ -131,7 +132,7 @@ func _sprite_andando() -> void:
 		animated_sprite.play("walk_right")
 
 func _sprite_morto() -> void:
-	placeholder.color = Color(1, 0, 0, 1) #Vermelho esta morto
+	animated_sprite.play("death")
 
 func _atirar() -> void:
 	if not pode_atirar or movimento_travado:
@@ -140,28 +141,37 @@ func _atirar() -> void:
 	movimento_travado = true
 	velocity = Vector2.ZERO
 	
+	var dir := (get_global_mouse_position() - global_position).normalized()
+	
+	
+	var spawn_position: Vector2
+	
+	if abs(dir.x) > abs(dir.y):
+		if dir.x > 0:
+			animated_sprite.play("attack_right")
+			spawn_position = $PontodoTiro_right.global_position
+		else:
+			animated_sprite.play("attack_left")
+			spawn_position = $PontodoTiro_left.global_position
+	else:
+		if dir.y > 0: # Baixo
+			animated_sprite.play("attack_down")
+			spawn_position = $PontodoTiro_down.global_position
+		else: # Cima
+			animated_sprite.play("attack_up")
+			spawn_position = $PontodoTiro_up.global_position
+
 	var proj = projetil.instantiate()
-	proj.global_position = ponto_tiro.global_position
-	#Ajuste para ele atirar pela direcao do mouse
-	var dir := get_global_mouse_position() - ponto_tiro.global_position
-	if dir.length() < 0.001:
-		dir = Vector2.RIGHT #fallback
-	else: 
-		dir = dir.normalized()
-		
+	proj.global_position = spawn_position
 	proj.direcao = dir
 	proj.dano = dano_ataque
 	proj.atirador = self
 	get_parent().add_child(proj)
 	
-	var t_reload := get_tree().create_timer(reload)
-	var t_travado := get_tree().create_timer(travar_apos_tiro) 
-	
-	await t_travado.timeout
+	get_tree().create_timer(reload).timeout.connect(func(): pode_atirar = true)
+
+	await get_tree().create_timer(travar_apos_tiro).timeout 
 	movimento_travado = false
-	
-	await t_reload.timeout
-	pode_atirar = true
 
 func ativar_invencibilidade(tempo: float) -> void:
 	invencivel = true
@@ -213,7 +223,7 @@ func travar_por_pergunta():
 	velocity = Vector2.ZERO
 	if animated_sprite: 
 		animated_sprite.stop()
-		
+
 func destravar_por_pergunta():
 	travado_por_pergunta = false
 	if animated_sprite: 

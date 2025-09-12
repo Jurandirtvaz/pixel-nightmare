@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://cpa2ntywx1rwi"]
 
 [ext_resource type="Script" uid="uid://bbpqu070vhdpd" path="res://Cenas/textbox/caixa_dialogo.gd" id="1_lsaeu"]
-[ext_resource type="FontFile" uid="uid://ckichl7wqwkn2" path="res://sprites/Assets/JMH Typewriter.otf" id="2_6mppf"]
+[ext_resource type="FontFile" uid="uid://c83f1r7x4j7if" path="res://sprites/Assets/JMH Typewriter.otf" id="2_6mppf"]
 
 [node name="CaixaDialogo" type="CanvasLayer"]
 script = ExtResource("1_lsaeu")

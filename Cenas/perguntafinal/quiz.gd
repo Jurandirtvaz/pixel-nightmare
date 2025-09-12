@@ -92,6 +92,7 @@ func remover_protecao_player():
 		player.set_imunidade(false)
 	if player.has_method("destravar_por_pergunta"):
 		player.destravar_por_pergunta()
+		
 
 func _on_button_2_pressed() -> void:
 	verificar_resposta(1)
