@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://vvm0o34f0ehw"
-path="res://.godot/imported/raio.png-f4b61f3235f3e35f3aea8c67ac2117cc.ctex"
+path="res://.godot/imported/raio.png-68981b0f38134cd2ae0b0294cb5a5028.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/raio.png"
-dest_files=["res://.godot/imported/raio.png-f4b61f3235f3e35f3aea8c67ac2117cc.ctex"]
+source_file="res://Sprites/raio.png"
+dest_files=["res://.godot/imported/raio.png-68981b0f38134cd2ae0b0294cb5a5028.ctex"]
 
 [params]
 
