@@ -5,7 +5,7 @@ extends Area2D
 @export var visual_growth_speed: float = 200.0 # Crescimento do efeito
 @export var visible_time: float = 0.2          # Tempo visível
 @export var attack_damage: int = 1
-@export var debug: bool = true
+@export var debug: bool = false
 
 @onready var colshape: CollisionShape2D = $CollisionShape2D
 
