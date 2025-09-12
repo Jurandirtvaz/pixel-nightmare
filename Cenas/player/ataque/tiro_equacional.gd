@@ -3,7 +3,7 @@ extends Area2D
 @export var velocidade: float = 600.0
 @export var tempo_de_vida: float = 1.6
 @export var cor: Color = Color(1, 1, 1)  # cor do texto
-var dano = get_meta("dano")
+@export var dano: int = 5
 
 var direcao: Vector2 = Vector2.RIGHT
 var atirador: Node = null
@@ -30,7 +30,6 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	global_position += direcao * velocidade * delta
-
 
 func _quando_colidir(alvo: Node) -> void:
 	if alvo == atirador:
