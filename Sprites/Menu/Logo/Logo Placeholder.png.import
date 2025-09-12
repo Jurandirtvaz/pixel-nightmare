@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bitqro26b3wpb"
-path="res://.godot/imported/Dorme na cadeira-Sheet.png-032ac491ac8aee559db13d391f4e4d89.ctex"
+uid="uid://bg2cl44weuymf"
+path="res://.godot/imported/Logo Placeholder.png-c2071146cd7993d003f4d957b0c27a79.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/saladeaula/Dorme na cadeira-Sheet.png"
-dest_files=["res://.godot/imported/Dorme na cadeira-Sheet.png-032ac491ac8aee559db13d391f4e4d89.ctex"]
+source_file="res://sprites/Menu/Logo/Logo Placeholder.png"
+dest_files=["res://.godot/imported/Logo Placeholder.png-c2071146cd7993d003f4d957b0c27a79.ctex"]
 
 [params]
 

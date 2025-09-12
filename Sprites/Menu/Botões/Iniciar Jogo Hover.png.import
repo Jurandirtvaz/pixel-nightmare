@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bitqro26b3wpb"
-path="res://.godot/imported/Dorme na cadeira-Sheet.png-032ac491ac8aee559db13d391f4e4d89.ctex"
+uid="uid://b605tl5ibg6gg"
+path="res://.godot/imported/Iniciar Jogo Hover.png-6ab475881e81fd23dc08fffbe761d638.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/saladeaula/Dorme na cadeira-Sheet.png"
-dest_files=["res://.godot/imported/Dorme na cadeira-Sheet.png-032ac491ac8aee559db13d391f4e4d89.ctex"]
+source_file="res://sprites/Menu/Botões/Iniciar Jogo Hover.png"
+dest_files=["res://.godot/imported/Iniciar Jogo Hover.png-6ab475881e81fd23dc08fffbe761d638.ctex"]
 
 [params]
 
