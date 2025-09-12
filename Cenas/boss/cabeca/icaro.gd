@@ -7,7 +7,8 @@ var falas: Array[String] = [
 	"VOU TE ROTACIONAR",
 	"AHAHAHAHHAHAHAHAHA",
 	"RASTERIZAR? EU VOU É TE REPROVAR",
-	"TA DANDO PRA VER AI DE TRAS"
+	"TA DANDO PRA VER AI DE TRAS",
+	"Cuidado..."
 ]
 
 @onready var spawn_timer: Timer = $SpawnTimer
