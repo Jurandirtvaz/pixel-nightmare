@@ -1,16 +1,16 @@
 [gd_scene load_steps=8 format=3 uid="uid://dmn2q7fgq40sd"]
 
 [ext_resource type="Texture2D" uid="uid://berp355qs7ynw" path="res://sprites/estacionamanto.png" id="1_xwuul"]
-[ext_resource type="PackedScene" uid="uid://dxss2p330l6nf" path="res://cenas/boss/boss.tscn" id="2_bj8tx"]
-[ext_resource type="PackedScene" uid="uid://8rnlj3pa11yn" path="res://cenas/player/player.tscn" id="3_xwuul"]
-[ext_resource type="PackedScene" uid="uid://cb1ohuye5gdqu" path="res://cenas/hud/hud.tscn" id="4_bj8tx"]
-[ext_resource type="PackedScene" uid="uid://bmyivw7l48drk" path="res://cenas/boss/cabeca/icaro.tscn" id="5_6l3mj"]
+[ext_resource type="PackedScene" uid="uid://dxss2p330l6nf" path="res://Cenas/boss/boss.tscn" id="2_bj8tx"]
+[ext_resource type="PackedScene" uid="uid://8rnlj3pa11yn" path="res://Cenas/player/player.tscn" id="3_xwuul"]
+[ext_resource type="PackedScene" uid="uid://cb1ohuye5gdqu" path="res://Cenas/hud/hud.tscn" id="4_bj8tx"]
+[ext_resource type="PackedScene" uid="uid://bmyivw7l48drk" path="res://Cenas/boss/cabeca/icaro.tscn" id="5_6l3mj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lbtql"]
-size = Vector2(1081.5, 106)
+size = Vector2(1342, 106)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6l3mj"]
-size = Vector2(128, 715)
+size = Vector2(128, 746)
 
 [node name="Cenario" type="Node2D"]
 position = Vector2(-35, -14)
@@ -20,7 +20,8 @@ position = Vector2(-35, -14)
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(570.25, 764)
+top_level = true
+position = Vector2(553, 767)
 shape = SubResource("RectangleShape2D_lbtql")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
@@ -28,12 +29,13 @@ position = Vector2(573.5, -69)
 shape = SubResource("RectangleShape2D_lbtql")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(1182, 349)
+position = Vector2(1209, 353)
 shape = SubResource("RectangleShape2D_6l3mj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(-35, 352.5)
+position = Vector2(-66, 353)
 shape = SubResource("RectangleShape2D_6l3mj")
+one_way_collision_margin = 2.6
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(573, 347)
@@ -48,7 +50,8 @@ rotation = -0.0171482
 position = Vector2(204, 595)
 rotation = -0.00530558
 scale = Vector2(3, 3)
+collision_mask = 1
 
 [node name="IcaroHead" parent="." instance=ExtResource("5_6l3mj")]
-position = Vector2(-426, -356)
-scale = Vector2(2, 2)
+position = Vector2(-908, -456)
+scale = Vector2(3, 3)

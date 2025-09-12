@@ -1,12 +1,12 @@
 [gd_scene load_steps=34 format=3 uid="uid://8rnlj3pa11yn"]
 
-[ext_resource type="Script" uid="uid://bwsmffq1e5ua7" path="res://cenas/player/player.gd" id="1_onrkg"]
+[ext_resource type="Script" uid="uid://bwsmffq1e5ua7" path="res://Cenas/player/player.gd" id="1_onrkg"]
 [ext_resource type="Texture2D" uid="uid://d3poxrh3xnji6" path="res://sprites/player/attack/Player Attack-Sheet.png" id="2_jottg"]
-[ext_resource type="Texture2D" uid="uid://w6hgvsiu62lr" path="res://sprites/player/idle/Player Idle Spritet.png" id="2_pm8rb"]
-[ext_resource type="Texture2D" uid="uid://c0lnip4mj2aa6" path="res://sprites/player/idle/Player Movement Down-Sheet.png" id="3_o7jqu"]
-[ext_resource type="Texture2D" uid="uid://b0y4e32ovxium" path="res://sprites/player/idle/Player Movement Left-Sheet.png" id="3_u8dkl"]
-[ext_resource type="Texture2D" uid="uid://ciem2kpulr24l" path="res://sprites/player/idle/Player Movement Right-Sheet.png" id="5_jottg"]
-[ext_resource type="Texture2D" uid="uid://dsjgyhu3jvg2" path="res://sprites/player/idle/Player Movement Up-Sheet.png" id="6_y8plr"]
+[ext_resource type="Texture2D" uid="uid://w6hgvsiu62lr" path="res://sprites/player/walk/Player Idle Spritet.png" id="2_pm8rb"]
+[ext_resource type="Texture2D" uid="uid://c0lnip4mj2aa6" path="res://sprites/player/walk/Player Movement Down-Sheet.png" id="3_o7jqu"]
+[ext_resource type="Texture2D" uid="uid://b0y4e32ovxium" path="res://sprites/player/walk/Player Movement Left-Sheet.png" id="3_u8dkl"]
+[ext_resource type="Texture2D" uid="uid://ciem2kpulr24l" path="res://sprites/player/walk/Player Movement Right-Sheet.png" id="5_jottg"]
+[ext_resource type="Texture2D" uid="uid://dsjgyhu3jvg2" path="res://sprites/player/walk/Player Movement Up-Sheet.png" id="6_y8plr"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_13ktv"]
 atlas = ExtResource("2_jottg")

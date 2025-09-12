@@ -2,10 +2,10 @@
 
 [ext_resource type="Script" uid="uid://cmlwj3e3qjnc1" path="res://Cenas/menu/background_animado.gd" id="1_21l6l"]
 [ext_resource type="Shader" uid="uid://btrjmwabk7lsw" path="res://Cenas/menu/quad_rodante.gdshader" id="2_iw8aj"]
-[ext_resource type="Texture2D" uid="uid://bh53lbfefqfp0" path="res://sprites/menu/salafrente.jpg" id="3_hb22i"]
-[ext_resource type="Texture2D" uid="uid://btw6jgmapnctu" path="res://sprites/menu/salatras.jpg" id="4_ew2f4"]
-[ext_resource type="Texture2D" uid="uid://cyxolkq5xs142" path="res://sprites/menu/salaesquerda.jpg" id="5_ps0n4"]
-[ext_resource type="Texture2D" uid="uid://c4bbluwf38a56" path="res://sprites/menu/saladireita.jpg" id="6_bbql2"]
+[ext_resource type="Texture2D" uid="uid://bh53lbfefqfp0" path="res://Sprites/Menu/salafrente.jpg" id="3_hb22i"]
+[ext_resource type="Texture2D" uid="uid://btw6jgmapnctu" path="res://Sprites/Menu/salatras.jpg" id="4_ew2f4"]
+[ext_resource type="Texture2D" uid="uid://cyxolkq5xs142" path="res://Sprites/Menu/salaesquerda.jpg" id="5_ps0n4"]
+[ext_resource type="Texture2D" uid="uid://c4bbluwf38a56" path="res://Sprites/Menu/saladireita.jpg" id="6_bbql2"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_h72aw"]
 shader = ExtResource("2_iw8aj")
