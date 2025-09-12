@@ -1,9 +1,10 @@
-[gd_scene load_steps=52 format=3 uid="uid://cympie7yind0l"]
+[gd_scene load_steps=65 format=3 uid="uid://cympie7yind0l"]
 
 [ext_resource type="Script" uid="uid://b2dm74m11t1vw" path="res://cenas/saladeaula/saladeaula.gd" id="1_p520r"]
 [ext_resource type="Texture2D" uid="uid://bgxd5in56j07y" path="res://sprites/saladeaula/Sala de aula.png" id="1_uvo6r"]
 [ext_resource type="Texture2D" uid="uid://dph186yjb2id" path="res://sprites/saladeaula/Cadira.png" id="3_s1yma"]
 [ext_resource type="Texture2D" uid="uid://scdbccgee1db" path="res://sprites/saladeaula/NPC Generico-Sheet.png" id="3_vcrei"]
+[ext_resource type="Texture2D" uid="uid://c8n62d3cicn1w" path="res://sprites/saladeaula/Acorda na cadeira-Sheet.png" id="5_jbm2w"]
 [ext_resource type="Texture2D" uid="uid://bitqro26b3wpb" path="res://sprites/saladeaula/Dorme na cadeira-Sheet.png" id="5_s1yma"]
 [ext_resource type="PackedScene" uid="uid://cpa2ntywx1rwi" path="res://cenas/textbox/Caixa_Dialogo.tscn" id="6_5o8mc"]
 [ext_resource type="PackedScene" uid="uid://dry6n8a3v6rss" path="res://cenas/transition/FadeTransition.tscn" id="7_vcrei"]
@@ -228,6 +229,54 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_i8ei7"]
+atlas = ExtResource("5_jbm2w")
+region = Rect2(200, 0, 40, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_me3rx"]
+atlas = ExtResource("5_jbm2w")
+region = Rect2(240, 0, 40, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rw0a2"]
+atlas = ExtResource("5_jbm2w")
+region = Rect2(280, 0, 40, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k2lmf"]
+atlas = ExtResource("5_jbm2w")
+region = Rect2(320, 0, 40, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bdvb4"]
+atlas = ExtResource("5_jbm2w")
+region = Rect2(360, 0, 40, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mckex"]
+atlas = ExtResource("5_jbm2w")
+region = Rect2(400, 0, 40, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i4hp1"]
+atlas = ExtResource("5_jbm2w")
+region = Rect2(440, 0, 40, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_km85e"]
+atlas = ExtResource("5_jbm2w")
+region = Rect2(0, 0, 40, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6oxdr"]
+atlas = ExtResource("5_jbm2w")
+region = Rect2(40, 0, 40, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1pjjy"]
+atlas = ExtResource("5_jbm2w")
+region = Rect2(80, 0, 40, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cyckm"]
+atlas = ExtResource("5_jbm2w")
+region = Rect2(120, 0, 40, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8hgld"]
+atlas = ExtResource("5_jbm2w")
+region = Rect2(160, 0, 40, 80)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_6yjb6"]
 atlas = ExtResource("5_s1yma")
 region = Rect2(120, 0, 40, 80)
@@ -287,14 +336,55 @@ animations = [{
 "name": &"default",
 "speed": 5.0
 }, {
-"frames": [],
-"loop": true,
-"name": &"new_animation",
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i8ei7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_me3rx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rw0a2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k2lmf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bdvb4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mckex")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i4hp1")
+}],
+"loop": false,
+"name": &"player_acordando",
 "speed": 5.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_km85e")
+}],
 "loop": true,
-"name": &"player_acordando",
+"name": &"player_acordando_inicio",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6oxdr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1pjjy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cyckm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8hgld")
+}],
+"loop": true,
+"name": &"player_acordando_loop",
 "speed": 5.0
 }, {
 "frames": [{
@@ -464,7 +554,9 @@ texture = ExtResource("3_s1yma")
 position = Vector2(611, 151)
 scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_uvo6r")
-animation = &"player_dormindo_inicio"
+animation = &"player_acordando"
+frame = 5
+frame_progress = 0.303131
 
 [node name="CaixaDialogo" parent="." instance=ExtResource("6_5o8mc")]
 
