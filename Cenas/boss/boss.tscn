@@ -1,82 +1,32 @@
-[gd_scene load_steps=16 format=3 uid="uid://dxss2p330l6nf"]
+[gd_scene load_steps=11 format=3 uid="uid://dxss2p330l6nf"]
 
-[ext_resource type="Script" uid="uid://dro4td8kciudk" path="res://cenas/boss/boss.gd" id="1_s4p10"]
-[ext_resource type="Texture2D" uid="uid://bf81ct0qrt6l4" path="res://sprites/Mão 2.png" id="2_catpj"]
-[ext_resource type="PackedScene" uid="uid://dkncw2u2kbc1l" path="res://cenas/boss/ataque/shockwave.tscn" id="3_skx2t"]
-[ext_resource type="PackedScene" uid="uid://c0sr0o0u4ogax" path="res://cenas/boss/ataque/bullet.tscn" id="4_lnbgr"]
+[ext_resource type="Script" uid="uid://dro4td8kciudk" path="res://Cenas/boss/boss.gd" id="1_s4p10"]
+[ext_resource type="Texture2D" uid="uid://chla2ay1a3660" path="res://Sprites/Chefão/sprites mao andando1.png" id="2_mfxp8"]
+[ext_resource type="Texture2D" uid="uid://c7rom1i8jq10k" path="res://Sprites/Chefão/sprites mao andando2.png" id="3_nmsfa"]
+[ext_resource type="PackedScene" uid="uid://dkncw2u2kbc1l" path="res://Cenas/boss/ataque/shockwave.tscn" id="3_skx2t"]
+[ext_resource type="PackedScene" uid="uid://c0sr0o0u4ogax" path="res://Cenas/boss/ataque/bullet.tscn" id="4_lnbgr"]
+[ext_resource type="Texture2D" uid="uid://b3jkd2qjumlno" path="res://Sprites/Chefão/sprites mao andando3.png" id="4_xvl7h"]
+[ext_resource type="Texture2D" uid="uid://qkkv5bws1x58" path="res://Sprites/Chefão/mão batendo.png" id="7_p0xwj"]
+[ext_resource type="Texture2D" uid="uid://cr65gpv8kqiag" path="res://Sprites/Chefão/mao apontando sprite.png" id="8_qjte0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_skx2t"]
 size = Vector2(70, 67)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_lnbgr"]
-atlas = ExtResource("2_catpj")
-region = Rect2(0, 0, 341, 341)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_o1i15"]
-atlas = ExtResource("2_catpj")
-region = Rect2(341, 0, 341, 341)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_we8h1"]
-atlas = ExtResource("2_catpj")
-region = Rect2(682, 0, 341, 341)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_kvofc"]
-atlas = ExtResource("2_catpj")
-region = Rect2(0, 341, 341, 341)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ef0k6"]
-atlas = ExtResource("2_catpj")
-region = Rect2(341, 341, 341, 341)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ry61v"]
-atlas = ExtResource("2_catpj")
-region = Rect2(682, 341, 341, 341)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_kles1"]
-atlas = ExtResource("2_catpj")
-region = Rect2(0, 682, 341, 341)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_etj48"]
-atlas = ExtResource("2_catpj")
-region = Rect2(341, 682, 341, 341)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_h3lj5"]
-atlas = ExtResource("2_catpj")
-region = Rect2(682, 682, 341, 341)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_1s1j2"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_lnbgr")
+"texture": ExtResource("2_mfxp8")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_o1i15")
+"texture": ExtResource("3_nmsfa")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_we8h1")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_kvofc")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ef0k6")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ry61v")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_kles1")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_etj48")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_h3lj5")
+"texture": ExtResource("4_xvl7h")
 }],
 "loop": true,
 "name": &"Idle",
-"speed": 5.0
+"speed": 8.0
 }, {
 "frames": [],
 "loop": true,
@@ -94,14 +44,13 @@ position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_skx2t")
 
 [node name="ShootPoint" type="Node2D" parent="."]
-position = Vector2(-14, -18)
+position = Vector2(51, -12)
 
 [node name="Marker2D" type="Marker2D" parent="ShootPoint"]
-position = Vector2(-2, 0)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, 1)
-scale = Vector2(0.325513, 0.293255)
+scale = Vector2(1.55954, 1.46646)
 sprite_frames = SubResource("SpriteFrames_1s1j2")
 animation = &"Idle"
 
@@ -109,8 +58,17 @@ animation = &"Idle"
 position = Vector2(1, 0)
 scale = Vector2(10, 10)
 collision_layer = 2
-max_radius = 80.0
 
 [node name="Bullet" parent="." instance=ExtResource("4_lnbgr")]
 position = Vector2(-15, -20)
 scale = Vector2(0.03, 0.03)
+
+[node name="Punho" type="Sprite2D" parent="."]
+position = Vector2(0, 1)
+scale = Vector2(1.77743, 1.89756)
+texture = ExtResource("7_p0xwj")
+
+[node name="Atirar" type="Sprite2D" parent="."]
+position = Vector2(0, 1)
+scale = Vector2(1.55954, 1.46646)
+texture = ExtResource("8_qjte0")

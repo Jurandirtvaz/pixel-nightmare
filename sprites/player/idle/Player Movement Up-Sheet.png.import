@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dsjgyhu3jvg2"
-path="res://.godot/imported/Player Movement Up-Sheet.png-0c1833ad14589e89df46f9e77dbcee4a.ctex"
+path="res://.godot/imported/Player Movement Up-Sheet.png-f982d78a53a2fda17c8d1f665d0a7176.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/player/idle/Player Movement Up-Sheet.png"
-dest_files=["res://.godot/imported/Player Movement Up-Sheet.png-0c1833ad14589e89df46f9e77dbcee4a.ctex"]
+source_file="res://Sprites/player/idle/Player Movement Up-Sheet.png"
+dest_files=["res://.godot/imported/Player Movement Up-Sheet.png-f982d78a53a2fda17c8d1f665d0a7176.ctex"]
 
 [params]
 

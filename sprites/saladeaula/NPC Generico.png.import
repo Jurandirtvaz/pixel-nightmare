@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bxob5vycj0ak4"
-path="res://.godot/imported/NPC Generico.png-c6958c0d2a733963cfaed5b30cb88a82.ctex"
+path="res://.godot/imported/NPC Generico.png-b2a85a507ff89f6f377b6b3d22050f0c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/saladeaula/NPC Generico.png"
-dest_files=["res://.godot/imported/NPC Generico.png-c6958c0d2a733963cfaed5b30cb88a82.ctex"]
+source_file="res://Sprites/saladeaula/NPC Generico.png"
+dest_files=["res://.godot/imported/NPC Generico.png-b2a85a507ff89f6f377b6b3d22050f0c.ctex"]
 
 [params]
 
