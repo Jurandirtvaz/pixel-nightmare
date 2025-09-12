@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cyxolkq5xs142"
-path="res://.godot/imported/salaesquerda.jpg-75fd1e2a327f6e11aa3e7dbfdee06fb9.ctex"
+uid="uid://0w8145p6ogkv"
+path="res://.godot/imported/Sprite player caindo-Sheet.png-682adb710ab874acd2ad9a2ca7da5513.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/menu/salaesquerda.jpg"
-dest_files=["res://.godot/imported/salaesquerda.jpg-75fd1e2a327f6e11aa3e7dbfdee06fb9.ctex"]
+source_file="res://sprites/saladeaula/Sprite player caindo-Sheet.png"
+dest_files=["res://.godot/imported/Sprite player caindo-Sheet.png-682adb710ab874acd2ad9a2ca7da5513.ctex"]
 
 [params]
 
