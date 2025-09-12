@@ -4,10 +4,13 @@ extends CharacterBody2D
 @export var acceleration: float = 1500.0 
 @export var friction: float = 1500.0
 
-#Vidas / Hud
-@export var vidas_maximas: int = 3 #Vida máxima
-var vidas: int = vidas_maximas #Vida atual
 var hud : Node
+
+#Invencibilidade 
+@export var t_invencivel_inicial: float = 1.5
+var invencivel: bool = false
+var t_invencivel_restante: float = 0.0
+var tween_invencibilidade: Tween
 
 #Ataque
 @export var dano_ataque: int = 5
@@ -20,13 +23,18 @@ var ultima_direcao: Vector2 = Vector2.DOWN
 @onready var projetil = preload("res://Cenas/player/ataque/tiro_equacional.tscn")
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
-
+@onready var collision_shape: CollisionShape2D = $CollisionShape2D
 @onready var placeholder: ColorRect = $ColorRect
 var esta_morto : bool = false
 
 func _physics_process(delta: float) -> void:
 	if esta_morto:
 		return
+	
+	if invencivel: 
+		t_invencivel_restante -= delta
+		if t_invencivel_restante <= 0:
+			finalizar_invencibilidade()
 	
 	if movimento_travado:
 		velocity = velocity.move_toward(Vector2.ZERO, friction * delta)
@@ -51,16 +59,23 @@ func _physics_process(delta: float) -> void:
 		_atirar()
 
 func tomar_dano() -> void:
-	if vidas <= 0:
+	if invencivel or esta_morto:
 		return
-	vidas -= 1
+	
+	if VidaPlayer.vidas_atual <= 0:
+		return
+	VidaPlayer.perder_vida()
+	
 	#Atualizar os quadradinhos de vida
 	if hud:
-		hud.atualizar_vidas(vidas)
-		hud.piscar_vida(vidas)
-	print("Vidas do player:", vidas)
+		hud.atualizar_vidas(VidaPlayer.vidas_atual)
+		hud.piscar_vida(VidaPlayer.vidas_atual)
+	print("Vidas do player:", VidaPlayer.vidas_atual)
 	
-	if vidas == 0:
+	#Fica invencivel apos tomar dano
+	ativar_invencibilidade(1.0)
+	
+	if VidaPlayer.vidas_atual == 0:
 		await get_tree().create_timer(0.12).timeout
 		morrer()
 
@@ -69,6 +84,9 @@ func morrer() -> void:
 	velocity = Vector2.ZERO
 	_sprite_morto()
 	print("GAME OVER")
+	
+	finalizar_invencibilidade()
+	
 	await get_tree().create_timer(0.3).timeout
 	
 	#Adicionando o game-over como overlay
@@ -84,6 +102,11 @@ func _unhandled_input(event: InputEvent) -> void:
 func _ready() -> void:
 	hud = get_tree().get_first_node_in_group("hud")
 	print("HUD encontrado? ", hud != null)
+	
+	if hud:
+		hud.atualizar_vidas(VidaPlayer.vidas_atual)
+	
+	ativar_invencibilidade(t_invencivel_inicial)
 
 func _sprite_parado() -> void:
 	if ultima_direcao.y > 0:
@@ -137,3 +160,45 @@ func _atirar() -> void:
 	
 	await t_reload.timeout
 	pode_atirar = true
+
+func ativar_invencibilidade(tempo: float) -> void:
+	invencivel = true
+	t_invencivel_restante = tempo
+	
+	# Desativa a colisão
+	if collision_shape:
+		collision_shape.set_deferred("disabled", true)
+	
+	# Faz o player piscar
+	if tween_invencibilidade:
+		tween_invencibilidade.kill()
+	
+	tween_invencibilidade = create_tween()
+	tween_invencibilidade.set_loops()  # Loop infinito até ser parado
+	
+	# Efeito de piscar
+	tween_invencibilidade.tween_property(animated_sprite, "modulate:a", 0.5, 0.1)
+	tween_invencibilidade.tween_property(animated_sprite, "modulate:a", 1.0, 0.1)
+	
+	# Timer para finalizar a invencibilidade
+	var timer = get_tree().create_timer(tempo)
+	timer.connect("timeout", finalizar_invencibilidade)
+		
+func reativar_colisao() -> void: 
+	if collision_shape and not esta_morto:
+			collision_shape.disabled = false
+			
+func finalizar_invencibilidade() -> void:
+	invencivel = false
+	
+	# Para o efeito de piscar
+	if tween_invencibilidade:
+		tween_invencibilidade.kill()
+	
+	# Restaura a opacidade normal
+	if animated_sprite:
+		animated_sprite.modulate.a = 1.0
+	
+	# Reativa a colisão se não estiver morto
+	if collision_shape and not esta_morto:
+		collision_shape.disabled = false

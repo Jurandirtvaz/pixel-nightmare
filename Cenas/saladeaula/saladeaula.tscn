@@ -1,12 +1,12 @@
 [gd_scene load_steps=52 format=3 uid="uid://cympie7yind0l"]
 
-[ext_resource type="Script" uid="uid://b2dm74m11t1vw" path="res://Cenas/saladeaula/saladeaula.gd" id="1_p520r"]
+[ext_resource type="Script" uid="uid://b2dm74m11t1vw" path="res://cenas/saladeaula/saladeaula.gd" id="1_p520r"]
 [ext_resource type="Texture2D" uid="uid://bgxd5in56j07y" path="res://sprites/saladeaula/Sala de aula.png" id="1_uvo6r"]
 [ext_resource type="Texture2D" uid="uid://dph186yjb2id" path="res://sprites/saladeaula/Cadira.png" id="3_s1yma"]
 [ext_resource type="Texture2D" uid="uid://scdbccgee1db" path="res://sprites/saladeaula/NPC Generico-Sheet.png" id="3_vcrei"]
 [ext_resource type="Texture2D" uid="uid://bitqro26b3wpb" path="res://sprites/saladeaula/Dorme na cadeira-Sheet.png" id="5_s1yma"]
-[ext_resource type="PackedScene" uid="uid://cpa2ntywx1rwi" path="res://Cenas/textbox/Caixa_Dialogo.tscn" id="6_5o8mc"]
-[ext_resource type="PackedScene" uid="uid://dry6n8a3v6rss" path="res://Cenas/transition/FadeTransition.tscn" id="7_vcrei"]
+[ext_resource type="PackedScene" uid="uid://cpa2ntywx1rwi" path="res://cenas/textbox/Caixa_Dialogo.tscn" id="6_5o8mc"]
+[ext_resource type="PackedScene" uid="uid://dry6n8a3v6rss" path="res://cenas/transition/FadeTransition.tscn" id="7_vcrei"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_j75w7"]
 atlas = ExtResource("3_vcrei")

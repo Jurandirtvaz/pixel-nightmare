@@ -7,7 +7,10 @@ func _ready() -> void:
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("restart"):
 		#reinicia o jogo
+		VidaPlayer.resetar_vidas()
+		
 		get_tree().paused = false
+		await get_tree().process_frame
 		get_tree().reload_current_scene()
 	elif event.is_action_pressed("ui_quit"):
 		#fecha o jogo
