@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://dm6mc32450jrc"]
+
+[ext_resource type="Texture2D" uid="uid://hqthnh7jyu7t" path="res://sprites/final/final.png" id="1_j7n3a"]
+[ext_resource type="FontFile" uid="uid://c83f1r7x4j7if" path="res://sprites/Assets/JMH Typewriter.otf" id="2_uqi8y"]
+
+[node name="Fim" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_j7n3a")
+
+[node name="Final" type="Label" parent="TextureRect"]
+offset_left = 187.0
+offset_top = 63.0
+offset_right = 1030.0
+offset_bottom = 115.0
+theme_override_colors/font_color = Color(0.135409, 0.152978, 0.141917, 0.498039)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.862745)
+theme_override_fonts/font = ExtResource("2_uqi8y")
+theme_override_font_sizes/font_size = 41
+text = "PARABÉNS NOS VEMOS PRÓXIMO PERIODO"
+horizontal_alignment = 2
+vertical_alignment = 2
