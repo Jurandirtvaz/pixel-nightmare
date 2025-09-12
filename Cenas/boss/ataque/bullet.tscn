@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=3 uid="uid://c0sr0o0u4ogax"]
 
-[ext_resource type="Script" uid="uid://d1l6w4t3faesn" path="res://Cenas/boss/ataque/bullet.gd" id="1_v7oki"]
+[ext_resource type="Script" uid="uid://d1l6w4t3faesn" path="res://cenas/boss/ataque/bullet.gd" id="1_v7oki"]
 [ext_resource type="Texture2D" uid="uid://vvm0o34f0ehw" path="res://sprites/raio.png" id="2_v8qja"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v7oki"]
