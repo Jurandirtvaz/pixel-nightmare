@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://7occig0ofkem"
-path="res://.godot/imported/holofote.png-5f3c11a3512cf4f6338c7ad84241d827.ctex"
+path="res://.godot/imported/holofote.png-1a9efc0f8ed4d440858567b31b599c42.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Menu/Logo/holofote.png"
-dest_files=["res://.godot/imported/holofote.png-5f3c11a3512cf4f6338c7ad84241d827.ctex"]
+source_file="res://sprites/Menu/Logo/holofote.png"
+dest_files=["res://.godot/imported/holofote.png-1a9efc0f8ed4d440858567b31b599c42.ctex"]
 
 [params]
 
