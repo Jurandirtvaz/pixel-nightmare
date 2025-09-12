@@ -1,47 +1,62 @@
 [gd_scene load_steps=3 format=3 uid="uid://dvj2h60kbijt2"]
 
 [ext_resource type="Script" uid="uid://c6rqa3rocwtpm" path="res://Cenas/perguntafinal/quiz.gd" id="1_y7dva"]
-[ext_resource type="FontFile" uid="uid://cfdamhje42oi2" path="res://sprites/Assets/KiwiSoda.ttf" id="2_5lhto"]
+[ext_resource type="FontFile" uid="uid://cfdamhje42oi2" path="res://Sprites/Assets/KiwiSoda.ttf" id="2_5lhto"]
 
-[node name="Quiz" type="Control"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="Quiz" type="CanvasLayer"]
 script = ExtResource("1_y7dva")
 
-[node name="Label" type="Label" parent="."]
+[node name="Panel" type="Panel" parent="."]
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="Label2" type="Label" parent="Panel"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.12
-anchor_top = 0.134
-anchor_right = 0.12
-anchor_bottom = 0.134
-offset_left = -0.240005
-offset_top = 0.167999
-offset_right = 914.76
-offset_bottom = 120.168
+anchor_left = 0.118
+anchor_top = 0.042
+anchor_right = 0.118
+anchor_bottom = 0.042
+offset_left = 0.0639954
+offset_top = -0.216002
+offset_right = 915.064
+offset_bottom = 91.784
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_5lhto")
+theme_override_font_sizes/font_size = 90
+text = "PERGUNTA FINAL!!!!"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.23
+anchor_bottom = 0.23
+offset_top = -0.0400085
+offset_right = 1152.0
+offset_bottom = 119.96
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("2_5lhto")
-theme_override_font_sizes/font_size = 80
+theme_override_font_sizes/font_size = 70
 text = "Insira texto"
 horizontal_alignment = 1
 autowrap_mode = 2
 
-[node name="Button4" type="Button" parent="."]
+[node name="Button4" type="Button" parent="Panel"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.577
 anchor_top = 0.63
 anchor_right = 0.577
 anchor_bottom = 0.63
-offset_left = 0.295959
-offset_top = -0.240021
-offset_right = 239.296
-offset_bottom = 75.76
+offset_left = -10.704
+offset_top = 35.76
+offset_right = 228.296
+offset_bottom = 111.76
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("2_5lhto")
@@ -49,17 +64,17 @@ theme_override_font_sizes/font_size = 30
 text = "Texto base"
 autowrap_mode = 2
 
-[node name="Button2" type="Button" parent="."]
+[node name="Button2" type="Button" parent="Panel"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.24
 anchor_top = 0.63
 anchor_right = 0.24
 anchor_bottom = 0.63
-offset_left = 0.519989
-offset_top = -0.240021
-offset_right = 239.52
-offset_bottom = 75.76
+offset_left = -10.48
+offset_top = 35.76
+offset_right = 228.52
+offset_bottom = 111.76
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("2_5lhto")
@@ -67,17 +82,17 @@ theme_override_font_sizes/font_size = 30
 text = "Texto base"
 autowrap_mode = 2
 
-[node name="Button3" type="Button" parent="."]
+[node name="Button3" type="Button" parent="Panel"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.578
 anchor_top = 0.417
 anchor_right = 0.578
 anchor_bottom = 0.417
-offset_left = 0.143982
-offset_top = -0.216003
-offset_right = 239.144
-offset_bottom = 75.784
+offset_left = -10.856
+offset_top = 35.784
+offset_right = 228.144
+offset_bottom = 111.784
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("2_5lhto")
@@ -85,17 +100,17 @@ theme_override_font_sizes/font_size = 30
 text = "Texto base"
 autowrap_mode = 2
 
-[node name="Button" type="Button" parent="."]
+[node name="Button1" type="Button" parent="Panel"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.242
 anchor_top = 0.417
 anchor_right = 0.242
 anchor_bottom = 0.417
-offset_left = 0.215973
-offset_top = -0.216003
-offset_right = 239.216
-offset_bottom = 75.784
+offset_left = -10.784
+offset_top = 35.784
+offset_right = 228.216
+offset_bottom = 111.784
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("2_5lhto")
@@ -103,7 +118,7 @@ theme_override_font_sizes/font_size = 30
 text = "Texto base"
 autowrap_mode = 2
 
-[connection signal="pressed" from="Button4" to="." method="_on_button_4_pressed"]
-[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
-[connection signal="pressed" from="Button3" to="." method="_on_button_3_pressed"]
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Panel/Button4" to="." method="_on_button_4_pressed"]
+[connection signal="pressed" from="Panel/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="Panel/Button3" to="." method="_on_button_3_pressed"]
+[connection signal="pressed" from="Panel/Button1" to="." method="_on_button1_pressed"]
