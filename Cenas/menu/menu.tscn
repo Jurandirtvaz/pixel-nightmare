@@ -3,10 +3,10 @@
 [ext_resource type="Script" uid="uid://bsycj0w78hq3a" path="res://Cenas/menu/menu.gd" id="1_ouk20"]
 [ext_resource type="PackedScene" uid="uid://cympie7yind0l" path="res://Cenas/saladeaula/saladeaula.tscn" id="2_h6mwn"]
 [ext_resource type="PackedScene" uid="uid://byev0jj5d2b0e" path="res://Cenas/menu/background_animado.tscn" id="2_mae5d"]
-[ext_resource type="Texture2D" uid="uid://bg2cl44weuymf" path="res://Sprites/Menu/Logo/Logo Placeholder.png" id="4_4hy44"]
-[ext_resource type="Texture2D" uid="uid://fqakk78bvwe" path="res://Sprites/Menu/Botões/Iniciar jogo.png" id="4_ecwwl"]
+[ext_resource type="Texture2D" uid="uid://bg2cl44weuymf" path="res://sprites/menu/Logo/Logo Placeholder.png" id="4_4hy44"]
+[ext_resource type="Texture2D" uid="uid://fqakk78bvwe" path="res://sprites/menu/Botões/Iniciar jogo.png" id="4_ecwwl"]
 [ext_resource type="Script" uid="uid://rqsbhjtffjgi" path="res://Cenas/menu/logo_container.gd" id="4_ytr4m"]
-[ext_resource type="Texture2D" uid="uid://b605tl5ibg6gg" path="res://Sprites/Menu/Botões/Iniciar Jogo Hover.png" id="5_kk3ma"]
+[ext_resource type="Texture2D" uid="uid://b605tl5ibg6gg" path="res://sprites/menu/Botões/Iniciar Jogo Hover.png" id="5_kk3ma"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3

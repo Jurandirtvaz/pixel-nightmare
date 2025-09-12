@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dpkuf1dr0r566"
-path="res://.godot/imported/playercabeca_vida.png-e310f1357c4d9a8dafbb2e516958a546.ctex"
+path="res://.godot/imported/playercabeca_vida.png-4fe1130a205aed3407d3a9ec613b0f68.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Hud/playercabeca_vida.png"
-dest_files=["res://.godot/imported/playercabeca_vida.png-e310f1357c4d9a8dafbb2e516958a546.ctex"]
+source_file="res://sprites/Hud/playercabeca_vida.png"
+dest_files=["res://.godot/imported/playercabeca_vida.png-4fe1130a205aed3407d3a9ec613b0f68.ctex"]
 
 [params]
 

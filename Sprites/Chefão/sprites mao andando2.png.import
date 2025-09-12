@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c7rom1i8jq10k"
-path="res://.godot/imported/sprites mao andando2.png-5fa5a4de6397b7b6c150c5574059cdde.ctex"
+path="res://.godot/imported/sprites mao andando2.png-590182bf5aa81aa47305a61d1777c85e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Chefão/sprites mao andando2.png"
-dest_files=["res://.godot/imported/sprites mao andando2.png-5fa5a4de6397b7b6c150c5574059cdde.ctex"]
+source_file="res://sprites/Chefão/sprites mao andando2.png"
+dest_files=["res://.godot/imported/sprites mao andando2.png-590182bf5aa81aa47305a61d1777c85e.ctex"]
 
 [params]
 

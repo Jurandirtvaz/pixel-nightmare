@@ -1,13 +1,11 @@
 extends Area2D
 
-@onready var animacao = $Bala
 @export var speed: float = 600
 @export var damage: int = 1
 var direction: Vector2 = Vector2.ZERO
 
 
 func _ready():
-	animacao.play()
 	connect("body_entered", Callable(self, "_on_body_entered"))
 
 func _physics_process(delta):
