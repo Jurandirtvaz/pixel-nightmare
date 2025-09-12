@@ -1,46 +1,52 @@
 extends Area2D
 
-@export var growth_speed: float = 80.0
-@export var max_radius: float = 80.0
+@export var attack_radius: float = 10.0        # Raio dano
+@export var visual_max_radius: float = 80.0    # Raio visual
+@export var visual_growth_speed: float = 200.0 # Crescimento do efeito
+@export var visible_time: float = 0.2          # Tempo visível
 @export var attack_damage: int = 1
 @export var debug: bool = true
 
-var radius: float = 20.0
 @onready var colshape: CollisionShape2D = $CollisionShape2D
+
+var visual_radius: float = 2.0
+var bodies_hit: Array = []
 
 func _ready():
 	monitoring = true
 	monitorable = true
 	colshape.disabled = false
 
-	self.body_entered.connect(Callable(self, "_on_body_entered"))
+	# Colisor mantém o raio de ataque
+	if colshape.shape is CircleShape2D:
+		colshape.shape.radius = attack_radius
+
+	body_entered.connect(Callable(self, "_on_body_entered"))
 
 	call_deferred("_check_initial_overlaps")
 
 	if debug:
-		print("Shockwave _ready. radius:", radius)
+		print("Shockwave _ready. attack_radius:", attack_radius)
 
 func _check_initial_overlaps():
-	var bodies = get_overlapping_bodies()
-	if debug:
-		print("Check initial overlaps ->", bodies.size(), "bodies")
-	for b in bodies:
+	for b in get_overlapping_bodies():
 		_on_body_entered(b)
 
 func _process(delta):
-	radius += growth_speed * delta
+	# Cresce visualmente
+	visual_radius += visual_growth_speed * delta
+	if visual_radius > visual_max_radius:
+		visual_radius = visual_max_radius
+		visible_time -= delta
+		if visible_time <= 0:
+			queue_free()
 
-	if colshape.shape is CircleShape2D:
-		colshape.shape.radius = radius
-
-	scale = Vector2.ONE * (radius / 32.0)
-
-	if radius >= max_radius:
-		queue_free()
+	scale = Vector2.ONE * (visual_radius / 32.0)
 
 func _on_body_entered(body):
-	if debug:
-		print("Shockwave: body_entered ->", body.name, "groups:", body.get_groups())
-	if body.is_in_group("player"):
+	if body.is_in_group("player") and not bodies_hit.has(body):
 		if body.has_method("tomar_dano"):
 			body.tomar_dano()
+			bodies_hit.append(body)
+		if debug:
+			print("Player atingido pela onda! Distância:", body.global_position.distance_to(global_position))
