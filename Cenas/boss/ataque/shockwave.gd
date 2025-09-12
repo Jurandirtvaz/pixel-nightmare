@@ -1,7 +1,7 @@
 extends Area2D
 
 @export var attack_radius: float = 10.0        # Raio dano
-@export var visual_max_radius: float = 80.0    # Raio visual
+@export var visual_max_radius: float = 400.0    # Raio visual
 @export var visual_growth_speed: float = 200.0 # Crescimento do efeito
 @export var visible_time: float = 0.2          # Tempo visível
 @export var attack_damage: int = 1
