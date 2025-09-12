@@ -27,9 +27,10 @@ var ultima_direcao: Vector2 = Vector2.DOWN
 @onready var placeholder: ColorRect = $ColorRect
 var esta_morto : bool = false
 var esta_imune : bool = false
+var travado_por_pergunta: bool = false
 
 func _physics_process(delta: float) -> void:
-	if esta_morto:
+	if esta_morto or travado_por_pergunta:
 		return
 	
 	if invencivel: 
@@ -56,7 +57,7 @@ func _physics_process(delta: float) -> void:
 		_sprite_parado()
 	move_and_slide()
 	#Ataque
-	if Input.is_action_pressed("attack"):
+	if Input.is_action_pressed("attack") and not travado_por_pergunta:
 		_atirar()
 
 func tomar_dano() -> void:
@@ -206,3 +207,14 @@ func finalizar_invencibilidade() -> void:
 
 func set_imunidade(imune: bool):
 	esta_imune = imune
+
+func travar_por_pergunta():
+	travado_por_pergunta = true
+	velocity = Vector2.ZERO
+	if animated_sprite: 
+		animated_sprite.stop()
+		
+func destravar_por_pergunta():
+	travado_por_pergunta = false
+	if animated_sprite: 
+		_sprite_parado()

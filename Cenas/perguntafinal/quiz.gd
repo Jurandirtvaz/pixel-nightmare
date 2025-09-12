@@ -83,11 +83,15 @@ func proteger_player():
 	var player = get_tree().get_first_node_in_group("player")
 	if player and player.has_method("set_imunidade"):
 		player.set_imunidade(true)
-		
+	if player.has_method("travar_por_pergunta"):
+		player.travar_por_pergunta()
+
 func remover_protecao_player():
 	var player = get_tree().get_first_node_in_group("player")
 	if player and player.has_method("set_imunidade"):
 		player.set_imunidade(false)
+	if player.has_method("destravar_por_pergunta"):
+		player.destravar_por_pergunta()
 
 func _on_button_2_pressed() -> void:
 	verificar_resposta(1)

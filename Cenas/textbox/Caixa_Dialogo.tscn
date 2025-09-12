@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://cpa2ntywx1rwi"]
 
 [ext_resource type="Script" uid="uid://bbpqu070vhdpd" path="res://Cenas/textbox/caixa_dialogo.gd" id="1_lsaeu"]
-[ext_resource type="FontFile" uid="uid://cfdamhje42oi2" path="res://Sprites/Assets/KiwiSoda.ttf" id="2_6mppf"]
+[ext_resource type="FontFile" uid="uid://ckichl7wqwkn2" path="res://sprites/Assets/JMH Typewriter.otf" id="2_6mppf"]
 
 [node name="CaixaDialogo" type="CanvasLayer"]
 script = ExtResource("1_lsaeu")
@@ -37,10 +37,10 @@ offset_bottom = 155.0
 
 [node name="PressEnter" type="Label" parent="TextBox"]
 layout_mode = 0
-offset_left = 457.0
-offset_top = 130.0
-offset_right = 688.0
-offset_bottom = 153.0
+offset_left = 433.0
+offset_top = 128.0
+offset_right = 689.0
+offset_bottom = 151.0
 theme_override_colors/font_color = Color(1, 1, 1, 0.498039)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.862745)
 theme_override_fonts/font = ExtResource("2_6mppf")
