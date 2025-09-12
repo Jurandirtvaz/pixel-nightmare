@@ -109,46 +109,34 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_13ktv")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_13ktv")
 }],
 "loop": true,
 "name": &"attack_down",
-"speed": 1.0
+"speed": 5.0
 }, {
 "frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ubdmb")
-}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ubdmb")
 }],
 "loop": true,
 "name": &"attack_left",
-"speed": 1.0
+"speed": 5.0
 }, {
 "frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_a5trd")
-}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_a5trd")
 }],
 "loop": true,
 "name": &"attack_right",
-"speed": 1.0
+"speed": 5.0
 }, {
 "frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_3yp7p")
-}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_3yp7p")
 }],
 "loop": true,
 "name": &"attack_up",
-"speed": 1.0
+"speed": 5.0
 }, {
 "frames": [],
 "loop": true,
@@ -267,8 +255,7 @@ script = ExtResource("1_onrkg")
 position = Vector2(1, -5.72205e-06)
 scale = Vector2(0.367188, 0.375)
 sprite_frames = SubResource("SpriteFrames_hqtel")
-animation = &"attack_down"
-frame_progress = 0.384991
+animation = &"idle_down"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1, 0)
@@ -293,14 +280,5 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(1, 1, 1, 0)
 
-[node name="PontodoTiro_up" type="Node2D" parent="."]
-position = Vector2(5, -10)
-
-[node name="PontodoTiro_down" type="Node2D" parent="."]
-position = Vector2(18, 12)
-
-[node name="PontodoTiro_left" type="Node2D" parent="."]
-position = Vector2(-4, 12)
-
-[node name="PontodoTiro_right" type="Node2D" parent="."]
-position = Vector2(14, -1)
+[node name="PontodoTiro" type="Node2D" parent="."]
+position = Vector2(0, -8)
