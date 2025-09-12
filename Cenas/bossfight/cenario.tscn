@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://dmn2q7fgq40sd"]
+[gd_scene load_steps=8 format=3 uid="uid://dmn2q7fgq40sd"]
 
 [ext_resource type="Texture2D" uid="uid://berp355qs7ynw" path="res://sprites/estacionamanto.png" id="1_xwuul"]
 [ext_resource type="PackedScene" uid="uid://dxss2p330l6nf" path="res://Cenas/boss/boss.tscn" id="2_bj8tx"]
 [ext_resource type="PackedScene" uid="uid://8rnlj3pa11yn" path="res://Cenas/player/player.tscn" id="3_xwuul"]
 [ext_resource type="PackedScene" uid="uid://cb1ohuye5gdqu" path="res://Cenas/hud/hud.tscn" id="4_bj8tx"]
+[ext_resource type="PackedScene" uid="uid://bmyivw7l48drk" path="res://Cenas/boss/cabeca/icaro.tscn" id="5_6l3mj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lbtql"]
 size = Vector2(1081.5, 106)
@@ -47,3 +48,7 @@ rotation = -0.0171482
 position = Vector2(204, 595)
 rotation = -0.00530558
 scale = Vector2(3, 3)
+
+[node name="IcaroHead" parent="." instance=ExtResource("5_6l3mj")]
+position = Vector2(-426, -356)
+scale = Vector2(2, 2)
