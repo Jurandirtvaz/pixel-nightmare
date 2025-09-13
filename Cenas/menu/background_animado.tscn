@@ -1,16 +1,15 @@
-[gd_scene load_steps=9 format=3 uid="uid://byev0jj5d2b0e"]
+[gd_scene load_steps=8 format=3 uid="uid://byev0jj5d2b0e"]
 
 [ext_resource type="Script" uid="uid://cmlwj3e3qjnc1" path="res://Cenas/menu/background_animado.gd" id="1_21l6l"]
 [ext_resource type="Shader" uid="uid://btrjmwabk7lsw" path="res://Cenas/menu/quad_rodante.gdshader" id="2_iw8aj"]
 [ext_resource type="Texture2D" uid="uid://c4bbluwf38a56" path="res://sprites/Menu/saladireita.jpg" id="4_3483d"]
 [ext_resource type="Texture2D" uid="uid://btw6jgmapnctu" path="res://sprites/Menu/salatras.jpg" id="5_mayhy"]
 [ext_resource type="Texture2D" uid="uid://cyxolkq5xs142" path="res://sprites/Menu/salaesquerda.jpg" id="6_ontgf"]
-[ext_resource type="Texture2D" uid="uid://bh53lbfefqfp0" path="res://Sprites/Menu/salafrente.jpg" id="7_2gypd"]
-[ext_resource type="Texture2D" uid="uid://bh53lbfefqfp0" path="res://sprites/Menu/salafrente.jpg" id="7_3483d"]
+[ext_resource type="Texture2D" uid="uid://bh53lbfefqfp0" path="res://sprites/Menu/salafrente.jpg" id="7_2gypd"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_h72aw"]
 shader = ExtResource("2_iw8aj")
-shader_parameter/texture1 = ExtResource("7_3483d")
+shader_parameter/texture1 = ExtResource("7_2gypd")
 shader_parameter/texture2 = ExtResource("4_3483d")
 shader_parameter/texture3 = ExtResource("5_mayhy")
 shader_parameter/texture4 = ExtResource("6_ontgf")
