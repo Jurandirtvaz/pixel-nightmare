@@ -554,9 +554,7 @@ texture = ExtResource("3_s1yma")
 position = Vector2(611, 151)
 scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_uvo6r")
-animation = &"player_acordando"
-frame = 5
-frame_progress = 0.303131
+animation = &"player_dormindo"
 
 [node name="CaixaDialogo" parent="." instance=ExtResource("6_5o8mc")]
 

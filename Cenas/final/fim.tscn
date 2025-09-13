@@ -11,6 +11,7 @@ offset_bottom = 40.0
 texture = ExtResource("1_j7n3a")
 
 [node name="Final" type="Label" parent="TextureRect"]
+layout_mode = 0
 offset_left = 187.0
 offset_top = 63.0
 offset_right = 1030.0
