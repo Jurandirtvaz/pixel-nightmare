@@ -559,3 +559,6 @@ animation = &"player_dormindo"
 [node name="CaixaDialogo" parent="." instance=ExtResource("6_5o8mc")]
 
 [node name="FadeTransition" parent="." instance=ExtResource("7_vcrei")]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(577, 322)

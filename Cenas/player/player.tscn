@@ -304,7 +304,7 @@ position = Vector2(1, -5.72205e-06)
 scale = Vector2(0.367188, 0.375)
 sprite_frames = SubResource("SpriteFrames_hqtel")
 animation = &"walk_up"
-frame_progress = 0.635491
+frame_progress = 0.38914
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1, 0)

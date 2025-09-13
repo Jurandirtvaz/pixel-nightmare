@@ -20,6 +20,10 @@ config/icon="res://icon.svg"
 GameState="*res://Cenas/GameState.gd"
 VidaPlayer="*res://Cenas/player/vida_player.gd"
 
+[display]
+
+window/stretch/mode="canvas_items"
+
 [input]
 
 move_left={
