@@ -754,7 +754,7 @@ position = Vector2(526, 171)
 rotation = -0.532325
 sprite_frames = SubResource("SpriteFrames_f1kff")
 autoplay = "default"
-frame_progress = 0.362173
+frame_progress = 0.629734
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../FloatingAnimation")
